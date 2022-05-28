@@ -1,6 +1,85 @@
+# Bohemian Estates International Client repoting system
+
+# Table of content
+
+
+
+# Background
+Given the area of business the company, Bohemian Estates International s.r.o. is in. There is a strong demand for renting, opose to owning. Because of rising prices and rates on mortgages, there is a strong expectations that business growth will continue and may even speed up. Therefore there is a demand for CRM for the company to keep track of new incoming clients and for growing team and its' staff members.
+
+# Mission statement
+Provide a system which will help to easily keep track of a lead communications and making closing easier.
+
+# Target audience
+There is a small team of 5 people right now, will be most likely doubling within a year period.
+
+# Interviews
+I carried out short interviews with the staff members. Expecially with members of saleforce. All people interviewed will be *Users*.
+
+# Staff members
+There are details of staff members interviewed.
+
+| Name | Age | position | experience |
+| -- | -- | -- | -- |
+| Yury Vachugov | 35 | real-estate broker | 3.5 years |
+| Robert Poppl | 38 | sale manager | 18 years |
+| Katerina Hanzlik | 45 | real-estate broker | 6 months |
+| Lukas Pohorsky | 42 | real-esate broker | 2 years |
+
+## staff member goals
+From the resulting interviews, the user goals have been defined:
+
+
+# staff member stories
+
+
+## staff member requirements and expectations
+### Requirements
+* Simple and well laid out
+* Visually appealing
+* Clean and modern looking
+* Easy to create a lead in just a few clicks
+* Responsive desing is required, mobile first, as users will be viewing the site mostly on mobile phones outside the office.
+
+### Expextations
+* I expect to use the application on any size device without the experience affected
+* I expect that when I created a lead I can see it has been created.
+
+# Wireframes
+
+
+## Design choices
+Because this project is being created for Bohemian Estates International and the requirements include the need for it to be the same as existing design, following design choices will be based on this.
+
+### Fonts
+As always, with Bohemian Estates International projects, I will be using Ubuntu which I used from [Google Fonts](https://fonts.google.com/specimen/Ubuntu)
+
+#### Content
+Using font weight of 400.
+
+#### Headings
+
+### Colors
+
+
+# Structure
+## App flow
+
+
+## Models
+
+
+
+# Features
+
+
+
+
+
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome USER_NAME,
+Welcome JJohnyy,
 
 This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
