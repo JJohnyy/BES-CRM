@@ -21,4 +21,9 @@ def lead_detail(request, pk):
 
 
 def lead_create(request):
-    return render(request, 'leads/lead_create.html')
+    context = {
+        'form': LeadForm()
+    }
+    return render(request, 'leads/lead_create.html', context)
+
+
