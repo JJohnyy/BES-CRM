@@ -12,5 +12,9 @@ def lead_list(request):
 
 
 def lead_detail(request, pk):
-    return render(request, 'leads/lead_detail.html',)
+    lead = Lead.objects.get(id=pk)
+    context = {
+        'lead': lead
+    }
+    return render(request, 'leads/lead_detail.html',context)
 

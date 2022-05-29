@@ -13,9 +13,12 @@ class Lead(models.Model):
     age = models.IntegerField(default=0)
     agent = models.ForeignKey('Agent', on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.last_name
+
 
 class Agent(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user.name
+        return self.user.last_name
