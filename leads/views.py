@@ -21,8 +21,17 @@ def lead_detail(request, pk):
 
 
 def lead_create(request):
+    if request.method == 'POST':
+        print('receiving a post request')
+        form = LeadForm(request.POST)
+        if form.is_valid():
+            print('The form is valid')
+            print(form.cleaned_data)
+            first_name = form.cleaned.data['first_name']
+            last_name = form.cleaned.data['last_name']
+            age = form.cleaned.data['age']
     context = {
-        'form': LeadForm()
+        'form': form
     }
     return render(request, 'leads/lead_create.html', context)
 

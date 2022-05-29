@@ -8,9 +8,10 @@
 </head>
 <body>
     <h1>Lead create</h1>
-    <form action="." metod="post">
+    <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>
