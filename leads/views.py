@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Lead
+from .forms import LeadForm
 
 # Create your views here.
 
@@ -16,5 +17,8 @@ def lead_detail(request, pk):
     context = {
         'lead': lead
     }
-    return render(request, 'leads/lead_detail.html',context)
+    return render(request, 'leads/lead_detail.html', context)
 
+
+def lead_create(request):
+    return render(request, 'leads/lead_create.html')
