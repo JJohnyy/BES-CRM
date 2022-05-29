@@ -6,7 +6,7 @@
     <hr>
     {% for lead in leads %}
     <div>
-        <a href="{{% url 'leads:lead-detail' lead.pk %}}">{{ lead.last_name }} {{ lead.first_name }} {{lead.age}}</a>
+        <a href="{% url 'leads:lead-detail' lead.pk %}">{{ lead.last_name }} {{ lead.first_name }} {{lead.age}}</a>
     </div>
     {% endfor %}
 {% endblock content %}
