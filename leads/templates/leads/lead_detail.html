@@ -47,15 +47,4 @@
     </div>
   </section>
 
-
-
-    <a href="{% url 'leads:lead-list' %}"></a>
-    <hr>
-    <h1>lead detail</h1>
-    <p>Details of {{ lead.first_name }}</p>
-    <p>leads age {{ lead.age }}</p>
-    <p>agent responsible for lead is: {{ lead.agent }}</p>
-    <hr>
-    <a href="{% url 'leads:lead-update' lead.pk %}">Update</a>
-    <a href="{% url 'leads:lead-delete' lead.pk %}">Delete</a>
 {% endblock content %}
