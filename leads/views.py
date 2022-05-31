@@ -32,10 +32,10 @@ class LeadCreateView(CreateView):
 
     def form_valid(self, form):
         send_mail(
-            subject = "A lead has been created", 
-            message = "The lead has been created",
+            subject= "A lead has been created", 
+            message= "The lead has been created",
             from_email='test@test.com',
-            recipient_list= ['test2@test.com']
+            recipient_list=['test2@test.com']
         )
         return super(LeadCreateView, self).form_valid(form)
 
