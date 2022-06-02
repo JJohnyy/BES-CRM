@@ -9,7 +9,6 @@ class User(AbstractUser):
     is_agent = models.BooleanField(default=False)
     
 
-
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
@@ -23,7 +22,7 @@ class Lead(models.Model):
     age = models.IntegerField(default=0)
     address = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
-    agent = models.ForeignKey('Agent', on_delete=models.CASCADE)
+    agent = models.ForeignKey('Agent', null=True, blank=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.last_name
