@@ -1,3 +1,4 @@
+import random
 from django.shortcuts import render
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -26,8 +27,20 @@ class AgentCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
 
     def form_valid(self, form):
         agent = form.save(commit=False)
-        agent.organisation = self.request.user.user_profile
-        agent.save()
+        user.is_agent = True
+        user.is_organiser = False
+        user.set_password(f"{random.randint(0, 100)}")
+        user.save()
+        Agent.objects.create(
+            user=user,
+            organisation=self.request.user.userprofile,
+        )
+        send_mail(
+            subject='Agent created',
+            message="You were added as an agent on BES CRM",
+            from_email="admin@test.com",
+            recepient_list=[user.email]
+        )
         return super(AgentCreateView, self).form_valid(form)
 
 
