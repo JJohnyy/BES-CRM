@@ -175,7 +175,7 @@ class CategoryUpdateView(OrganisorAndLoginRequiredMixin, generic.UpdateView):
     form_class = CategoryModelForm
 
     def get_success_url(self):
-        return reverse("leads:lead-deatail")
+        return reverse("leads:lead-detail")
 
     def get_queryset(self):
         user = self.request.user
@@ -188,3 +188,20 @@ class CategoryUpdateView(OrganisorAndLoginRequiredMixin, generic.UpdateView):
                 organisation=user.agent.organisation
             )
         return queryset
+
+
+class LeadCategoryUpdateView(LoginRequiredMixin, generic.UpdateView):
+    template_name = "leads/lead_category_update.html"
+    form_class = LeadCategoryUpdateForm
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_organisor:
+            queryset = Lead.objects.filter(organisation=user.userprofile)
+        else:
+            queryset = Lead.objects.filter(organisation=user.agent.organisation)
+            queryset = queryset.filter(agent__user=user)
+        return queryset
+
+    def get_success_url(self):
+        return reverse("leads:lead-detail", kwargs={"pk": self.get_object().id})
