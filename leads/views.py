@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from agents.mixins import OrganiserAndLoginRequiredMixin
 from django.views import generic
 from .models import Lead, Agent
-from .forms import LeadForm, LeadModelForm, CustomUserCreationForm
+from .forms import LeadForm, LeadModelForm, CustomUserCreationForm, AssignAgentForm
 
 # Create your views here.
 
@@ -44,7 +44,6 @@ class LeadListView(LoginRequiredMixin, generic.ListView):
             })
         return context
     
-
 
 class LeadDetailView(LoginRequiredMixin, generic.DetailView):
     template_name = 'leads/lead_detail.html'
@@ -102,3 +101,11 @@ class LeadDeleteView(OrganiserAndLoginRequiredMixin, generic.DeleteView):
 
     def get_success_url(self):
         return reverse('leads:lead-list')
+        
+
+class AssignAgentView(OrganiserAndLoginRequiredMixin, generic.formView):
+    template = 'leads/assign_agent.html'
+    form_class = AssignAgentForm
+
+    def get_success_url(self):
+        return reverse('leads: lead-list')
