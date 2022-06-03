@@ -24,7 +24,7 @@ class Lead(models.Model):
     phone = models.CharField(max_length=20)
     organisation = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     agent = models.ForeignKey('Agent', null=True, blank=True, on_delete=models.SET_NULL)
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Category', realted_name="Leads", null=True, blank=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.last_name
