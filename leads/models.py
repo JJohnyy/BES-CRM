@@ -25,6 +25,8 @@ class Lead(models.Model):
     organisation = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     agent = models.ForeignKey('Agent', null=True, blank=True, on_delete=models.SET_NULL)
     category = models.ForeignKey('Category', related_name="Leads", null=True, blank=True, on_delete=models.SET_NULL)
+    email = models.EmailField()
+    description = models.TextField()
 
     def __str__(self):
         return self.last_name

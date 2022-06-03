@@ -24,10 +24,10 @@ class AgentCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
     form_class = AgentModelForm
 
     def get_success_url(self):
-        return reverse('agents:agent_list')
+        return reverse('agents:agent-list')
 
     def form_valid(self, form):
-        agent = form.save(commit=False)
+        user = form.save(commit=False)
         user.is_agent = True
         user.is_organiser = False
         user.set_password(f"{random.randint(0, 100)}")
@@ -40,7 +40,7 @@ class AgentCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
             subject='Agent created',
             message="You were added as an agent on BES CRM",
             from_email="admin@test.com",
-            recepient_list=[user.email]
+            recipient_list=[user.email]
         )
         return super(AgentCreateView, self).form_valid(form)
 
