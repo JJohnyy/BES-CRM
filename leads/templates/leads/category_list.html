@@ -25,8 +25,8 @@
                 </tr>
             <tr>
             {% for category in category_list %}
-              <td class="px-4 py-3">{{ category.name }}</td>
-              <td class="px-4 py-3">TODO</td>
+              <a href="{% url 'leads:category-detail' category.pk %}"><td class="px-4 py-3">{{ category.name }}</td></a>
+              <a href="{%  %}"><td class="px-4 py-3">TODO</td></a>
             </tr>
             {% endfor %}
           </tbody>
