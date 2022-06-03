@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from agents.mixins import OrganiserAndLoginRequiredMixin
 from django.views import generic
 from .models import Lead, Agent, Category
-from .forms import LeadForm, LeadModelForm, CustomUserCreationForm, AssignAgentForm, LeadCategoryUpdateForm
+from .forms import LeadForm, LeadModelForm, CustomUserCreationForm, AssignAgentForm, LeadCategoryUpdateForm, CategoryModelForm
 
 # Create your views here.
 
@@ -53,7 +53,7 @@ class LeadDetailView(LoginRequiredMixin, generic.DetailView):
     def get_queryset(self):
         user = self.request.user
         if user.is_organiser:
-            queryset = Lead.objects.filer(organisation=user.userprofile)
+            queryset = Lead.objects.filter(organisation=user.userprofile)
         else:
             queryset = Lead.objects.filter(organisation=user.agent.organisation)
             queryset = queryset.filter(agent__user=user)
@@ -68,6 +68,9 @@ class LeadCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
         return reverse('leads:lead-list')
 
     def form_valid(self, form):
+        lead = form.save(commit=False)
+        lead.organistation = self.request.user.userprofile
+        lead.save()
         send_mail(
             subject= "A lead has been created", 
             message= "The lead has been created",
@@ -79,16 +82,19 @@ class LeadCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
 
 class LeadUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
     template_name = 'leads/lead_update.html'
-    queryset = Lead.objects.all()
     form_class = LeadModelForm
 
     def get_queryset(self):
         user = self.request.user
-        return Lead.objects.filer(organisation=user.userprofile)
+        return Lead.objects.filter(organisation=user.userprofile)
         
     
     def get_success_url(self):
         return reverse('leads:lead-update')
+
+    def form_valid(self, form):
+        form.save()
+        return super(LeadUpdateView, self).form_valid(form)
 
 
 class LeadDeleteView(OrganiserAndLoginRequiredMixin, generic.DeleteView):
@@ -101,6 +107,7 @@ class LeadDeleteView(OrganiserAndLoginRequiredMixin, generic.DeleteView):
 
     def get_success_url(self):
         return reverse('leads:lead-list')
+
         
 
 class AssignAgentView(OrganiserAndLoginRequiredMixin, generic.FormView):
@@ -134,7 +141,7 @@ class CategoryListView(LoginRequiredMixin, generic.ListView):
         context = super(CategoryListView, self).get_context_data(**kwargs)
         user = self.request.user
 
-        if user.is_organisor:
+        if user.is_organiser:
             queryset = Lead.objects.filter(
                 organisation=user.userprofile
             )
@@ -170,7 +177,7 @@ class CategoryDetailView(LoginRequiredMixin, generic.DetailView):
         return queryset
 
 
-class CategoryUpdateView(OrganisorAndLoginRequiredMixin, generic.UpdateView):
+class CategoryUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
     template_name = "leads/category_update.html"
     form_class = CategoryModelForm
 
@@ -179,7 +186,7 @@ class CategoryUpdateView(OrganisorAndLoginRequiredMixin, generic.UpdateView):
 
     def get_queryset(self):
         user = self.request.user
-        if user.is_organisor:
+        if user.is_organiser:
             queryset = Category.objects.filter(
                 organisation=user.userprofile
             )
@@ -196,7 +203,7 @@ class LeadCategoryUpdateView(LoginRequiredMixin, generic.UpdateView):
 
     def get_queryset(self):
         user = self.request.user
-        if user.is_organisor:
+        if user.is_organiser:
             queryset = Lead.objects.filter(organisation=user.userprofile)
         else:
             queryset = Lead.objects.filter(organisation=user.agent.organisation)
