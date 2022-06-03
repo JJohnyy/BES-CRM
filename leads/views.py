@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from agents.mixins import OrganiserAndLoginRequiredMixin
 from django.views import generic
-from .models import Lead, Agent
+from .models import Lead, Agent, Category
 from .forms import LeadForm, LeadModelForm, CustomUserCreationForm, AssignAgentForm
 
 # Create your views here.
@@ -128,4 +128,51 @@ class AssignAgentView(OrganiserAndLoginRequiredMixin, generic.FormView):
 
 class CategoryListView(LoginRequiredMixin, generic.ListView):
     template_name = 'leads/category_list.html'
+    context_object_name = 'category-list'
+
+    def get_context_data(self, **kwargs):
+        context = super(CategoryListView, self).get_context_data(**kwargs)
+        user = self.request.user
+
+        if user.is_organisor:
+            queryset = Lead.objects.filter(
+                organisation=user.userprofile
+            )
+        else:
+            queryset = Lead.objects.filter(
+                organisation=user.agent.organisation
+            )
+
+        context.update({
+            "unassigned_lead_count": queryset.filter(category__isnull=True).count()
+        })
+        return context
     
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_organiser:
+            queryset = Category.objects.filter(organisation=user.userprofile)
+        else:
+            queryset = Category.objects.filter(user.agent.organisation)
+        return queryset
+
+
+class CategoryDetailView(LoginRequiredMixin, generic.DetailView):
+    template_name = 'leads/category_detail.html'
+    context_object_name = 'category'
+
+    def get_context_data(self, **kwargs):
+        context = super(CategoryDetailView, self).get_context_data(**kwargs)
+        leads = self.get_object().leads.all()
+        context.update({
+            'leads': leads
+        })
+        return context
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_organiser:
+            queryset = Category.objects.filter(organisation=user.userprofile)
+        else:
+            queryset = Category.objects.filter(user.agent.organisation)
+        return queryset
