@@ -47,7 +47,7 @@
     border-radius: 0.2em;
     display: block;
     text-align: center;
-    border: none;
+    border-color: #242f62;
     text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
     transition: 0.2s;
 }
