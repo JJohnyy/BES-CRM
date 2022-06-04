@@ -62,14 +62,23 @@
 
 .hero-img {
     width: 90%;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 .heading-1 {
     font-size: 3em;
     font-weight: bold;
-    margin: 0 auto;
+    margin: 0.5em auto;
     text-align: center;
+    
+}
+
+.landing-text-container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.5em;
+    border: 1px solid red;
 }
 
 .landing-text {
