@@ -1,10 +1,11 @@
 <header class="">
     <div class="">
-        <a href="{% url 'landing_page' %}" class="">
-            <img src="https://res.cloudinary.com/dontkrfjd/image/upload/v1653941174/logo-blue_hs6ari.svg" >
+        <nav class="navbar">
+        <a href="{% url 'landing_page' %}" class="logo">
+            <img class="logo" src="https://res.cloudinary.com/dontkrfjd/image/upload/v1653941174/logo-blue_hs6ari.svg" >
             <p class="ml-0 text-xl">BES CRM</p>
         </a>
-        <nav class="">
+        <ul>
         {% if not request.user.is_authenticated %}
             <a href="{% url 'signup' %}"class="">Signup</a>
             {% else %}
@@ -13,7 +14,7 @@
             {% endif %}
             <a href="{% url 'leads:lead-list' %}" class="">Leads</a>
         {% endif %}
-        </nav>
+
         {% if request.user.is_authenticated %}
             Your are logged in: {{ request.user.username }}
             <a href="{% url 'logout' %}">
@@ -27,5 +28,7 @@
         </button>
         </a>
         {% endif %}
+        </ul>
+    </nav>
     </div>
 </header>
