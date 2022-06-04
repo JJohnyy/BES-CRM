@@ -3,18 +3,19 @@
 {% block content %}
 
 <section class="">
-    <div class="hero-image-container">
-      <img class="hero-img" alt="hero" src="https://res.cloudinary.com/dontkrfjd/image/upload/v1654350313/favpng_customer-relationship-management-business-computer-software-enterprise-resource-planning_p3khdh.png">
-      <div class="">
-        <h1 class="heading-1">BES CRM</h1>
-        <p class="landing-text">Bohemain Estates International</p>
-        <p class="landing-text">client relationship manager</p>
-        <p class="landing-text">for sales</p>
-        <div class="">
-          <button class="{% url 'login' %} sign-button">LOGIN</button>
-        </div>
-      </div>
+  <div class="hero-image-container">
+    <img class="hero-img" alt="hero"
+      src="https://res.cloudinary.com/dontkrfjd/image/upload/v1654350313/favpng_customer-relationship-management-business-computer-software-enterprise-resource-planning_p3khdh.png">
+    <h1 class="heading-1">BES CRM</h1>
+    <div class="landing-text-container">
+      <p class="landing-text">Bohemain Estates International</p>
+      <p class="landing-text">client relationship manager</p>
+      <p class="landing-text">for sales</p>
     </div>
-  </section>
+    <div class="">
+      <button class="{% url 'login' %} sign-button">LOGIN</button>
+    </div>
+  </div>
+</section>
 
 {% endblock %}
