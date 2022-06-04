@@ -72,6 +72,7 @@
     border-radius: 0.2em;
     display: block;
     text-align: center;
+    border: none;
 }
 
 .navbar > a:visited {
@@ -151,4 +152,9 @@ label {
 
 .signup-form p {
     margin-top: 2em;
+}
+
+.forgot-password {
+    text-align: center;
+    font-size: 1.3em;
 }
