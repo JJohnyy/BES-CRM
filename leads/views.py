@@ -114,8 +114,7 @@ class LeadDeleteView(OrganiserAndLoginRequiredMixin, generic.DeleteView):
 
     def get_success_url(self):
         return reverse('leads:lead-list')
-
-        
+      
 
 class AssignAgentView(OrganiserAndLoginRequiredMixin, generic.FormView):
     template = 'leads/assign_agent.html'
