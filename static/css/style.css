@@ -33,19 +33,19 @@
     margin-top: 10px;
     cursor: pointer;
     width: 200px;
-    border: 1px solid red;
 }
-
+ 
 .sign-button {
     color: white;
     font-size: 2.7em;
     width: 100%;
     margin: 0 auto;
     text-decoration: none;
-    font-weight: bold;
     background-color: #242f62;
-    padding: 0.15em;
-    border-radius: 1em;
+    padding-bottom: 0.12em;
+    border-radius: 0.2em;
+    display: block;
+    text-align: center;
 }
 
 .navbar > a:visited {
