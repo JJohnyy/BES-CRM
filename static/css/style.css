@@ -69,4 +69,10 @@
     font-size: 3em;
     font-weight: bold;
     margin: 0 auto;
+    text-align: center;
+}
+
+.landing-text {
+    text-align: center;
+    font-size: 1.7em;
 }
