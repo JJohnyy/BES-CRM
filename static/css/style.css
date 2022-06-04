@@ -37,7 +37,7 @@
  
 .sign-button {
     color: white;
-    font-size: 2.7em;
+    font-size: 2em;
     width: 100%;
     max-width: 200px;
     margin: 0 auto;
@@ -47,6 +47,10 @@
     border-radius: 0.2em;
     display: block;
     text-align: center;
+}
+
+.sign-button:hover {
+    border-color: rgba(255,255,255,1);
 }
 
 .navbar > a:visited {
@@ -75,13 +79,13 @@
 }
 
 .landing-text-container {
-    width: 100%;
+    width: 250px;
     height: auto;
-    margin-bottom: 0.5em;
+    margin: 0.5em auto; 
     border: 1px solid red;
 }
 
 .landing-text {
-    text-align: center;
+    
     font-size: 1.7em;
 }
