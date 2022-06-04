@@ -9,7 +9,7 @@ from .forms import LeadForm, LeadModelForm, CustomUserCreationForm, AssignAgentF
 # Create your views here.
 
 
-class SignupView(LoginRequiredMixin, generic.CreateView):
+class SignupView(generic.CreateView):
     template_name = 'registration/signup.html'
     form_class = CustomUserCreationForm
 
@@ -69,7 +69,7 @@ class LeadCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
 
     def form_valid(self, form):
         lead = form.save(commit=False)
-        lead.organistation = self.request.user.userprofile
+        lead.organisation = self.request.user.userprofile
         lead.save()
         send_mail(
             subject= "A lead has been created", 
@@ -90,7 +90,7 @@ class LeadUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
         
     
     def get_success_url(self):
-        return reverse('leads:lead-update')
+        return reverse('leads:lead-list')
 
     def form_valid(self, form):
         form.save()
