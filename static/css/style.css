@@ -47,6 +47,7 @@
     border-radius: 0.2em;
     display: block;
     text-align: center;
+    border: none;
 }
 
 .sign-button:hover {
@@ -119,11 +120,33 @@
     border: 1px solid red;
     height: auto;
     margin: 1em auto;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 100%;
+    height: 3em;
+}
+
+label {
+    font-size: 2em;
+    margin-top: 5em;   
 }
 
 .signup-form {
     width: 100%;
-    display: block;
-    font-size: 1.7em;
+    font-size: 2.7em;
+    list-style-type: none;
+}
+
+.signup-form ul li {
+    list-style-type: none;
+    display: none;
+}
+
+.signup-form span {
+    font-size: 1.3em;
 }
 
