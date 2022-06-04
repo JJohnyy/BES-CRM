@@ -39,6 +39,7 @@
     color: white;
     font-size: 2.7em;
     width: 100%;
+    max-width: 200px;
     margin: 0 auto;
     text-decoration: none;
     background-color: #242f62;
@@ -52,4 +53,20 @@
     color: white;
     background-color: #242f62;
     text-decoration: none;
+}
+
+.hero-image-container {
+    width: 100%;
+    height: auto;
+}
+
+.hero-img {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.heading-1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0 auto;
 }
