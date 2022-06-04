@@ -4,7 +4,14 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from agents.mixins import OrganiserAndLoginRequiredMixin
 from django.views import generic
 from .models import Lead, Agent, Category
-from .forms import LeadForm, LeadModelForm, CustomUserCreationForm, AssignAgentForm, LeadCategoryUpdateForm, CategoryModelForm
+from .forms import (
+    LeadForm, 
+    LeadModelForm, 
+    CustomUserCreationForm, 
+    AssignAgentForm, 
+    LeadCategoryUpdateForm, 
+    CategoryModelForm
+    )
 
 # Create your views here.
 
