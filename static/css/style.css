@@ -42,18 +42,35 @@
     max-width: 200px;
     margin: 0 auto;
     text-decoration: none;
-    background-color: #242f62;
+    background-color: #b1415c;
     padding-bottom: 0.12em;
     border-radius: 0.2em;
     display: block;
     text-align: center;
-    border-color: #242f62;
-    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-    transition: 0.2s;
 }
 
 .sign-button:hover {
-    border-color: rgba(255,255,255,1);
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-button {
+    background-color: #242f62;
+    color: white;
+    font-size: 2em;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    text-decoration: none;
+    padding-bottom: 0.12em;
+    border-radius: 0.2em;
+    display: block;
+    text-align: center;
 }
 
 .navbar > a:visited {
@@ -88,7 +105,24 @@
     border: 1px solid red;
 }
 
-.landing-text {
-    
+.landing-text { 
     font-size: 1.7em;
 }
+
+
+
+
+/* sign in forms */
+
+.signup-form-wrapper {
+    width:90%;
+    border: 1px solid red;
+    height: auto;
+    margin: 1em auto;
+}
+
+.signup-form {
+    width: 100%;
+    display: block;
+}
+

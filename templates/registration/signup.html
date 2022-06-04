@@ -2,10 +2,10 @@
 
 {% block content %}
 <div class="signup-form-wrapper">
-   <form method="post">
+   <form method="post" class="signup-form">
       {% csrf_token %}
       {{ form.as_p }}
-      <button class="signup_button" type="submit" name="signup">SignUp</button>
+      <button class="signup_button" type="submit" name="signup" class="sign-button">SignUp</button>
    </form>
 </div>
 
