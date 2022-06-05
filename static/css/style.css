@@ -84,6 +84,7 @@
 .hero-image-container {
     width: 100%;
     height: auto;
+    margin-top: 3em;
 }
 
 .hero-img {
@@ -119,7 +120,7 @@
 .signup-form-wrapper {
     width:200px;
     height: auto;
-    margin: 1em auto;
+    margin: 3em auto;
     font-size: 2em;
     display: flex;
     flex-direction: column;
@@ -155,9 +156,13 @@ label {
 }
 
 .forgot-password-wrapper {
-    width: 100%;;
+    width: 200px;
     height: auto;
-    margin-top: 1em;
+    margin: 1em auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
 }
 
 .forgot-password {
