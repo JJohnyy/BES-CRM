@@ -273,7 +273,22 @@ textarea {
 
 
 
+/* lead detail */
 
+.heading-wrapper {
+    width: 20em;
+    margin: 0.5em auto;
+    border: 1px solid red;
+}
+
+.heading-lead-detail {
+    font-size: 1.4em;
+    color: gray;
+}
+
+.heading-lead-detail-name {
+    font-size: 2em;
+}
 
 
 
