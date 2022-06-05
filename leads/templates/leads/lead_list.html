@@ -42,7 +42,7 @@
             {% endfor %}
             <div class="divider"></div>
            <!-- {% if unassigned_leads.exists %}
-            {% for leads in unassigned_leads %}-->
+            {% for leads in unassigned_leads %}
             <h1 class="">Unassigned leads</h1>
             <div class="">
                 <div class="">
@@ -51,7 +51,7 @@
                             {{ lead.first_name }} {{ lead.last_name }}
                         </h2>
                         <p class="">Blue bottle.</p>
-                        <a href="{% url 'leads:assign-agent' lead.pk %}" class="">
+                        <<a href="{% url 'leads:assign-agent' lead.pk %}" class="">
                             assign agent
                         </a>
                     </div>
@@ -59,7 +59,7 @@
             </div>
             {% endfor %}
         </div>
-        {% endif %}
+        {% endif %}-->
     </div>
 </section>
 {% endblock content %}
