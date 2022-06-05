@@ -5,10 +5,11 @@
    <form method="post" class="signup-form">
       {% csrf_token %}
       {{ form.as_p }}
+      <div>
+         <button type="submit" name="signup" class="sign-button">SignUp</button>
+      </div>
    </form>
-   <div>
-      <button type="submit" name="signup" class="sign-button">SignUp</button>
-   </div>
+   
 </div>
    
 
