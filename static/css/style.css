@@ -268,7 +268,7 @@ textarea {
 }
 
 .category-head-item {
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
 
@@ -276,18 +276,25 @@ textarea {
 /* lead detail */
 
 .heading-wrapper {
-    width: 20em;
+    width: 25em;
     margin: 0.5em auto;
     border: 1px solid red;
 }
 
 .heading-lead-detail {
     font-size: 1.4em;
-    color: gray;
+    color: #becfdf;
+    margin-bottom: 0.2em;
 }
 
 .heading-lead-detail-name {
-    font-size: 2em;
+    font-size: 2.2em;
+    margin-bottom: 0.5em;
+}
+
+.lead-detail-links-wrapper {
+    width: 90%;
+    margin: 0.5em auto;
 }
 
 
