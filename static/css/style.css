@@ -35,6 +35,14 @@
     width: 200px;
 }
 
+.divider {
+    background-color: #242f62;
+    border: 2px solid #242f62;
+    width: 80%;
+    height: 2px;
+    margin: 1em auto;
+}
+
 .logout-button {
     color: rgb(0, 0, 0);
     font-size: 1.7em;
@@ -42,7 +50,7 @@
     max-width: 200px;
     margin: 1em auto;
     text-decoration: none;
-    background-color: #f9f8f3;
+    background-color: #becfdf;
     padding: 0.15em 0 0.15em 0;
     border-radius: 0.2em;
     display: block;
@@ -251,10 +259,6 @@ label {
     height: auto;
     margin: 0.5em auto;
     padding: 0.5em;
-    /*display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;*/
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -268,18 +272,20 @@ label {
 }
 
 .lead-span {
-    color: #242f62;
-    font-weight: 600;
+    color: #5f5f5f;
     font-size: 1.3em;
-    background-color: #becfdf;
-    padding: 0.1em 0.3em 0.1em 0.3em;
+    background-color: #f9f8f3;
+    padding: 0.2em 0.4em 0.2em 0.4em;
     border-radius: 50px;
 }
 
 .lead-link {
+    font-size: 1.2em;
     text-align: right;
     text-decoration: none;
     align-self: center;
+    font-weight: bold;
+    color: #b1415c;
 }
 
 
