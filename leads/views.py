@@ -79,8 +79,8 @@ class LeadCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
         lead.organisation = self.request.user.userprofile
         lead.save()
         send_mail(
-            subject= "A lead has been created", 
-            message= "The lead has been created",
+            subject="A lead has been created",
+            message="The lead has been created",
             from_email='test@test.com',
             recipient_list=['test2@test.com']
         )
@@ -117,11 +117,11 @@ class LeadDeleteView(OrganiserAndLoginRequiredMixin, generic.DeleteView):
       
 
 class AssignAgentView(OrganiserAndLoginRequiredMixin, generic.FormView):
-    template = 'leads/assign_agent.html'
+    template_name = 'leads/assign_agent.html'
     form_class = AssignAgentForm
 
     def get_form_kwargs(self, **kwargs):
-        kwargs = super(AssignAgentView, self).get_form__kwargs(**kwargs)
+        kwargs = super(AssignAgentView, self).get_form_kwargs(**kwargs)
         kwargs.update({
             'request': self.request
         })

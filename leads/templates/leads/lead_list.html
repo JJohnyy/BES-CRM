@@ -4,7 +4,7 @@
 
 <section class="">
     <div class="">
-        <h1 class="heading-1">Leads</h1>
+        <h1 class="heading-3">Leads</h1>
         <div class="links-wrapper">
             <a class="nav-link" href="{% url 'leads:category-list' %}">
                 view categories
@@ -41,17 +41,16 @@
                 </div>
             {% endfor %}
             <div class="divider"></div>
-           <!-- {% if unassigned_leads.exists %}
-            {% for leads in unassigned_leads %}
-            <h1 class="">Unassigned leads</h1>
+            {% if unassigned_leads.exists %}
+            {% for lead in unassigned_leads %}
+            <h1 class="heading-3">Unassigned leads</h1>
             <div class="">
-                <div class="">
-                    <div class="">
-                        <h2 class="">
+                <div class="leads-container">
+                    <div class="lead-wrapper-2">
+                        <h2 class="heading-2">
                             {{ lead.first_name }} {{ lead.last_name }}
                         </h2>
-                        <p class="">Blue bottle.</p>
-                        <<a href="{% url 'leads:assign-agent' lead.pk %}" class="">
+                        <a href="{% url 'leads:assign-agent' lead.pk %}" class="lead-link">
                             assign agent
                         </a>
                     </div>
@@ -59,7 +58,7 @@
             </div>
             {% endfor %}
         </div>
-        {% endif %}-->
+        {% endif %}
     </div>
 </section>
 {% endblock content %}

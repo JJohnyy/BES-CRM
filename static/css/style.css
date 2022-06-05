@@ -41,68 +41,6 @@
     margin: 2em auto;
 }
 
-.logout-button {
-    color: rgb(0, 0, 0);
-    font-size: 1.7em;
-    width: 100%;
-    max-width: 200px;
-    margin: 1em auto;
-    text-decoration: none;
-    background-color: #becfdf;
-    padding: 0.15em 0 0.15em 0;
-    border-radius: 0.2em;
-    display: block;
-    text-align: center;
-    border: none;
-}
- 
-.sign-button {
-    color: white;
-    font-size: 2em;
-    width: 100%;
-    max-width: 200px;
-    margin: 1em auto;
-    text-decoration: none;
-    background-color: #b1415c;
-    padding-bottom: 0.12em;
-    border-radius: 0.2em;
-    display: block;
-    text-align: center;
-    border: none;
-}
-
-
-.login-button {
-    background-color: #242f62;
-    color: white;
-    font-size: 1.8em;
-    width: 100%;
-    max-width: 200px;
-    margin: 1em auto;
-    text-decoration: none;
-    padding: 0.5em 0 0.5em 0;
-    border-radius: 0.2em;
-    display: block;
-    text-align: center;
-    border: none;
-}
-
-.login-button-navbar {
-    background-color: #BECFDF;
-    color: #242f62;
-    font-weight: bold;
-    font-size: 1.8em;
-    width: 100%;
-    max-width: 200px;
-    margin: 1em auto;
-    text-decoration: none;
-    padding: 0.5em 0 0.5em 0;
-    border-radius: 0.2em;
-    display: block;
-    text-align: center;
-    border: none;
-}
-
 .login-icon {
     background-color: #ffff;
     width: 20px;
@@ -144,6 +82,13 @@
     color: #242f62;
     font-weight: bold;
     
+}
+
+.heading-3 {
+    font-size: 1.8em;
+    color: #242f62;
+    font-weight: bold;
+    margin-left: 2em;
 }
 
 .landing-text-container {
@@ -264,6 +209,18 @@ label {
     border-radius: 1em;
 }
 
+.lead-wrapper-2 {
+    width: 90%;
+    height: auto;
+    margin: 0.5em auto;
+    padding: 0.5em;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    border: 2px solid #a5dbe5;
+    border-radius: 1em;
+}
+
 .lead-span-wrapper {
     align-self: center;
     text-align: left;
@@ -287,4 +244,66 @@ label {
 }
 
 
+/* buttons  */
 
+.logout-button {
+    color: rgb(0, 0, 0);
+    font-size: 1.7em;
+    width: 100%;
+    max-width: 200px;
+    margin: 1em auto;
+    text-decoration: none;
+    background-color: #becfdf;
+    padding: 0.15em 0 0.15em 0;
+    border-radius: 0.2em;
+    display: block;
+    text-align: center;
+    border: none;
+}
+ 
+.sign-button {
+    color: white;
+    font-size: 2em;
+    width: 100%;
+    max-width: 200px;
+    margin: 1em auto;
+    text-decoration: none;
+    background-color: #b1415c;
+    padding-bottom: 0.12em;
+    border-radius: 0.2em;
+    display: block;
+    text-align: center;
+    border: none;
+}
+
+
+.login-button {
+    background-color: #242f62;
+    color: white;
+    font-size: 1.8em;
+    width: 100%;
+    max-width: 200px;
+    margin: 1em auto;
+    text-decoration: none;
+    padding: 0.5em 0 0.5em 0;
+    border-radius: 0.2em;
+    display: block;
+    text-align: center;
+    border: none;
+}
+
+.login-button-navbar {
+    background-color: #BECFDF;
+    color: #242f62;
+    font-weight: bold;
+    font-size: 1.8em;
+    width: 100%;
+    max-width: 200px;
+    margin: 1em auto;
+    text-decoration: none;
+    padding: 0.5em 0 0.5em 0;
+    border-radius: 0.2em;
+    display: block;
+    text-align: center;
+    border: none;
+}
