@@ -8,7 +8,7 @@
     <h1 class="heading-lead-detail-name">{{ lead.first_name }} {{ lead.last_name }}</h1>
   </div>
   <div>
-    <div>
+    <div class="lead-detail-links-wrapper">
       <a href="{% url 'leads:lead-detail' lead.pk %}">Overview</a>
       <a href="{% url 'leads:lead-category-update' lead.pk %}">Category</a>
       <a href="{% url 'leads:lead-update' lead.pk %}">Update</a>
