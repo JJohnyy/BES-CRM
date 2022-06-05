@@ -8,6 +8,8 @@
    </form>
 </div>
 <button type="submit" name="login" class="login-button">Login</button>
-<a href="{% url 'reset-password' %}" class="forgot-password">Forgot password?</a>
+<div class="forgot-password-wrapper">
+   <a href="{% url 'reset-password' %}" class="forgot-password">Forgot password?</a>
+</div>
 
 {% endblock content %}

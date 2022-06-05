@@ -63,12 +63,12 @@
 .login-button {
     background-color: #242f62;
     color: white;
-    font-size: 2em;
+    font-size: 1.8em;
     width: 100%;
     max-width: 200px;
     margin: 0 auto;
     text-decoration: none;
-    padding-bottom: 0.12em;
+    padding: 0.5em 0 0.5em 0;
     border-radius: 0.2em;
     display: block;
     text-align: center;
@@ -117,7 +117,7 @@
 /* sign in forms */
 
 .signup-form-wrapper {
-    width:90%;
+    width:200px;
     height: auto;
     margin: 1em auto;
     font-size: 2em;
@@ -154,8 +154,16 @@ label {
     margin-top: 2em;
 }
 
+.forgot-password-wrapper {
+    width: 100%;;
+    height: auto;
+    margin-top: 1em;
+}
+
 .forgot-password {
     text-align: center;
     font-size: 1.3em;
     margin-top: 0.5em;
 }
+
+
