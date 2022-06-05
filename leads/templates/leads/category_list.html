@@ -2,36 +2,23 @@
 
 {% block content %}
 
-<section class="">
-  <div class="">
-    <div class="">
-      <h1 class="">Categories</h1>
-      <p class="">
-        these categories segment your leads
-      </p>
-    </div>
-    <div class="">
-      <table class="">
-        <thead>
-          <tr>
-            <th class="">Name</th>
-            <th class="">Lead count</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="">Unassigned</td>
-            <td class="">{{ unassigned_lead_count }}</td>
-          </tr>
-          <tr>
-            {% for category in category_list %}
-            <a href="{% url 'leads:category-detail' category.pk %}">
-              <td class="">{{ category.name }}</td>
-            </a>
-            <td class="">TODO</td>
-          </tr>
-          {% endfor %}
-        </tbody>
+<section>
+  <h1 class="heading-1">categories</h1>
+  <div class="categories-list-container">
+    <div class="categories-list-wrapper">
+      <table>
+          <thead class="category-head">
+            <tr>
+              <th class="category-head-item">Name</th>
+              <th class="category-head-item">Lead count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="category-head-item">Unassigned</td>
+              <td class="category-head-item">{{ unassigned_lead_count }}</td>
+            </tr>
+          </tbody>
       </table>
     </div>
   </div>

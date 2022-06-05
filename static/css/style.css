@@ -160,6 +160,11 @@ label {
     margin-top: 2em;
 }
 
+textarea {
+    width: 100%;
+    font-size: 1.7em;
+}
+
 
 
 .forgot-password-wrapper {
@@ -242,6 +247,34 @@ label {
     font-weight: bold;
     color: #b1415c;
 }
+
+
+.categories-list-container {
+    width: 100%;
+    border: 1px solid red;
+    height: auto;
+}
+
+.categories-list-wrapper {
+    width: 80%;
+    border: 1px solid red;
+}
+
+.category-head {
+    background-color: #becfdf;
+    display: flex;
+    justify-content:space-around;
+    flex-direction: row;
+}
+
+.category-head-item {
+    font-size: 1.5em;
+}
+
+
+
+
+
 
 
 /* buttons  */

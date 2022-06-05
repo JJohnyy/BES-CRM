@@ -1,7 +1,11 @@
 <div class="header-container">
     <header>
         <nav class="navbar">
+            {% if not request.user.is_authenticated %}
             <a href="{% url 'landing_page' %}"><img src="https://res.cloudinary.com/dontkrfjd/image/upload/v1653941174/logo-blue_hs6ari.svg" alt="Bohemian Estates Logo" class="logo"></a>
+            {% else %}
+            <a href="{% url 'leads:lead-list' %}"><img src="https://res.cloudinary.com/dontkrfjd/image/upload/v1653941174/logo-blue_hs6ari.svg" alt="Bohemian Estates Logo" class="logo"></a>
+            {% endif %}
             <ul>
                 {% if not request.user.is_authenticated %}
                 <li>

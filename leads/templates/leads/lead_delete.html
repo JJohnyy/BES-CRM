@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<a href="{% url 'leads:lead-detail' lead.pk %}"></a>
 <h1>Are you sure you want to delete this lead?</h1>
 <form method="POST">
     {% csrf_token %}

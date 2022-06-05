@@ -3,10 +3,10 @@
 
 {% block content %}
 
-    <h1>Lead create</h1>
+    <h1 class="heading-1">Lead create</h1>
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Submit</button>
+        <button type="submit" class="login-button">Submit</button>
     </form>
 {% endblock content %}
