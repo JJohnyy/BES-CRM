@@ -20,8 +20,8 @@
             {% for lead in leads %}
                 <div class="leads-container">
                     <div class="lead-wrapper">
-                        <h2 class="heading-2">
-                            {{ lead.first_name }} {{ lead.last_name }}
+                        <h2>
+                            <a class="nav-link" href="{% url 'leads:lead-detail' lead.pk %}">{{ lead.first_name }} {{ lead.last_name }}</a>
                         </h2>
                         <div class="lead-span-wrapper">
                         {% if lead.category %}
@@ -34,7 +34,7 @@
                         </span>
                     {% endif %}
                          </div>
-                        <a href="{% url 'leads:lead-detail' lead.pk %}" class="lead-link">
+                        <a href="{% url 'leads:lead-update' lead.pk %}" class="lead-link">
                             edit
                         </a>
                     </div>

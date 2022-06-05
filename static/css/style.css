@@ -81,7 +81,6 @@
     font-size: 1.5em;
     color: #242f62;
     font-weight: bold;
-    
 }
 
 .heading-3 {
@@ -108,13 +107,14 @@
 
 .nav-link {
     font-size: 1.5em;
-    color: black;
+    color: #242f62;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .nav-link:visited {
     text-decoration: none;
-    color: black;
+    color: #242f62;
     margin: 0.5em auto;
 }
 
@@ -133,12 +133,22 @@
 
 input {
     width: 100%;
-    height: 3em;
     border-radius: 1em;
+    font-size: 1.8em;
+    padding: 0.3em;
+}
+
+select {
+    font-size: 1.8em;
+    margin-left: 0.5em;
+    border-radius: 1em;
+    padding: 0.3em;
 }
 
 label {
     font-size: 2em;
+    margin-left: 0.5em;
+    color:#242f62;
 }
 
 .signup-form {
@@ -163,6 +173,8 @@ label {
 textarea {
     width: 100%;
     font-size: 1.7em;
+    border-radius: 0.7em;
+    padding: 0.5em;
 }
 
 
@@ -309,8 +321,9 @@ textarea {
 }
 
 .lead-detail-container {
-    width: 100%;
+    width: 90%;
     height: auto;
+    margin: 0.5em auto;
 }
 
 .lead-detail-wrapper {

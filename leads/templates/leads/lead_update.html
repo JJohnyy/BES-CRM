@@ -4,13 +4,29 @@
 {% block content %}
 
 <section>
-    <h2>Lead</h2>
-    <h1>{{lead.first_name}} {{ lead.last_name }}</h1>
-    <div>
-        <a href="{% url 'leads:lead-detail' lead.pk %}">Overview</a>
-        <a href="{% url 'leads:lead-category-update' lead.pk %}">Category</a>
-        <a href="{% url 'leads:lead-update' lead.pk %}">Update</a>
+    <div class="heading-wrapper">
+      <h2 class="heading-lead-detail">lead details</h2>
+      <h1 class="heading-lead-detail-name">{{ lead.first_name }} {{ lead.last_name }}</h1>
     </div>
-</section>
+    <div>
+      <div class="lead-detail-links-wrapper">
+        <a class="lead-detail-link-item" href="{% url 'leads:lead-detail' lead.pk %}">Overview</a>
+        <a class="lead-detail-link-item" href="{% url 'leads:lead-category-update' lead.pk %}">Category</a>
+        <a class="lead-detail-link-item active" href="{% url 'leads:lead-update' lead.pk %}">Update</a>
+      </div>
+      <div class="divider"></div>
+      <div class="lead-detail-container">
+        
+            <form class="signup-form" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+              <div>
+                <a type="submit" class="login-button">update lead</a>
+            </div>
+            </form>
+        
+      </div>
+    </div>
+  </section>
 
 {% endblock content %}

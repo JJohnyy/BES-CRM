@@ -6,8 +6,11 @@
       {% csrf_token %}
       {{ form.as_p }}
    </form>
+   <div>
+      <button type="submit" name="signup" class="sign-button">SignUp</button>
+   </div>
 </div>
-   <button type="submit" name="signup" class="sign-button">SignUp</button>
+   
 
 
 {% endblock content %}
