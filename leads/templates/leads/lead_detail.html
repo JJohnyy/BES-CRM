@@ -13,26 +13,17 @@
       <a class="lead-detail-link-item" href="{% url 'leads:lead-category-update' lead.pk %}">Category</a>
       <a class="lead-detail-link-item" href="{% url 'leads:lead-update' lead.pk %}">Update</a>
     </div>
+    <div class="divider"></div>
     <div class="lead-detail-container">
       <div class="lead-detail-wrapper">
-        
           <span class="lead-detail-span">age</span>
           <span class="lead-detail-span">{{ lead.age }}</span>
-          
-          
-        
-        
           <span class="lead-detail-span">address</span>
           <span class="lead-detail-span">{{ lead.address }}</span>
-        
-        
           <span class="lead-detail-span">phone</span>
           <span class="lead-detail-span">{{ lead.phone }}</span>
-        
-        
           <span class="lead-detail-span">email</span>
           <span class="lead-detail-span">{{ lead.email }}</span>
-        
       </div>
     </div>
   </div>
