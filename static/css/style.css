@@ -149,13 +149,14 @@
 }
 
 .nav-link {
-    font-size: 1.3em;
+    font-size: 1.5em;
     color: black;
 }
 
 .nav-link:visited {
     text-decoration: none;
     color: black;
+    margin: 0.5em auto;
 }
 
 
