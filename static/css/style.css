@@ -300,6 +300,40 @@ textarea {
     border: 1px solid red;
 }
 
+.lead-detail-link-item {
+    font-size: 1.4em;
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    color: #b1415c;
+}
+
+.lead-detail-container {
+    width: 100%;
+    height: auto;
+}
+
+.lead-detail-wrapper {
+    width: 90%;
+    margin: 0.5em auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border: 1px solid red;
+}
+
+.lead-detail-span {
+    font-size: 1.4em;
+}
+
+
+
+
+
+
+
 
 
 /* buttons  */
