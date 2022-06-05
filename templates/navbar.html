@@ -21,7 +21,7 @@
                 {% if request.user.is_authenticated %}
                 <span>Your are logged in: {{request.user.username}}</span>
                 <li>
-                    <a href="{% url 'logout' %}">Logout</a>
+                    <a class="logout-button" href="{% url 'logout' %}">Logout</a>
                 </li>
                 {% else %}
                 <li>
