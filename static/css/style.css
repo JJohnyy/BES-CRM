@@ -137,6 +137,7 @@
     font-size: 1.5em;
     color: #242f62;
     font-weight: bold;
+    
 }
 
 .landing-text-container {
@@ -231,7 +232,6 @@ label {
 /* lead list */
 
 .links-wrapper {
-    border-top: 1px solid red;
     width: 90%;
     margin: 0.5em auto;
     height: auto;
@@ -251,22 +251,35 @@ label {
     height: auto;
     margin: 0.5em auto;
     padding: 0.5em;
-    display: flex;
+    /*display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;*/
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr;
     border: 2px solid #a5dbe5;
     border-radius: 1em;
 }
 
 .lead-span-wrapper {
-    display: flex;
-    justify-content: flex-end;
-
+    align-self: center;
+    text-align: left;
 }
 
 .lead-span {
+    color: #242f62;
+    font-weight: 600;
+    font-size: 1.3em;
+    background-color: #becfdf;
+    padding: 0.1em 0.3em 0.1em 0.3em;
+    border-radius: 50px;
+}
+
+.lead-link {
     text-align: right;
+    text-decoration: none;
+    align-self: center;
 }
 
 
