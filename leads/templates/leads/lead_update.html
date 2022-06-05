@@ -9,7 +9,7 @@
     <div>
         <a href="{% url 'leads:lead-detail' lead.pk %}">Overview</a>
         <a href="{% url 'leads:lead-category-update' %}">Category</a>
-        <a href="{% url 'leads:lead-update' %}">Update</a>
+        <a href="{% url 'leads:lead-update' lead.pk %}">Update</a>
     </div>
 </section>
 
