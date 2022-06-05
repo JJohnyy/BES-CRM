@@ -278,7 +278,6 @@ textarea {
 .heading-wrapper {
     width: 90%;
     margin: 0.5em auto;
-    border: 1px solid red;
 }
 
 .heading-lead-detail {
@@ -297,7 +296,6 @@ textarea {
     margin: 0.5em auto;
     display: flex;
     justify-content:space-around;
-    border: 1px solid red;
 }
 
 .lead-detail-link-item {
@@ -320,12 +318,15 @@ textarea {
     margin: 0.5em auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    border: 1px solid red;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-self: space-between;
 }
 
 .lead-detail-span {
     font-size: 1.4em;
+    margin-top: 0.5em;
+    justify-self: space-between;
+    border-bottom: 1px solid #becfdf;
 }
 
 
