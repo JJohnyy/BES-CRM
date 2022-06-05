@@ -4,20 +4,16 @@
 
 <section class="">
     <div class="">
-        <div class="">
-            <div>
-                <h1 class="">Leads</h1>
+                <h1 class="heading-1">Leads</h1>
+            <div class="">
                 <a href="{% url 'leads:category-list' %}">
                     View categories
                 </a>
-            </div>
-            <div>
                 {% if request.user.is_organiser %}
                 <a class="" href="{% url 'leads:lead-create' %}">
                     create lead
                 </a>
                 {% endif %}
-            </div>
         </div>
         <div class="">
             {% for lead in leads %}

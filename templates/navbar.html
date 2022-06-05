@@ -10,16 +10,15 @@
                 {% else %}
                 {% if requested.user.is_organiser %}
                 <li>
-                    <a href="{% url 'agents:agent-list' %}">Agents</a>
+                    <a class="nav-link" href="{% url 'agents:agent-list' %}">Agents</a>
                 </li>
                 {% endif %}
-                <li>
-                    <a href="{% url 'leads:lead-list' %}"></a>
+                <li class="nav-link">
+                    <a href="{% url 'leads:lead-list' %}">Leads</a>
                 </li>
                 {% endif %}
-
                 {% if request.user.is_authenticated %}
-                <span>Your are logged in: {{request.user.username}}</span>
+                <span  class="nav-span">Your are logged in: {{request.user.username}}</span>
                 <li>
                     <a class="logout-button" href="{% url 'logout' %}">Logout</a>
                 </li>

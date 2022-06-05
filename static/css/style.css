@@ -36,14 +36,14 @@
 }
 
 .logout-button {
-    color: #0000;
-    font-size: 2em;
+    color: rgb(0, 0, 0);
+    font-size: 1.7em;
     width: 100%;
     max-width: 200px;
     margin: 1em auto;
     text-decoration: none;
     background-color: #f9f8f3;
-    padding-bottom: 0.12em;
+    padding: 0.15em 0 0.15em 0;
     border-radius: 0.2em;
     display: block;
     text-align: center;
@@ -144,6 +144,19 @@
     font-size: 1.7em;
 }
 
+.nav-span {
+    font-size: 1.3em;
+}
+
+.nav-link {
+    font-size: 1.3em;
+    color: black;
+}
+
+.nav-link:visited {
+    text-decoration: none;
+    color: black;
+}
 
 
 
