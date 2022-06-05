@@ -276,7 +276,7 @@ textarea {
 /* lead detail */
 
 .heading-wrapper {
-    width: 25em;
+    width: 90%;
     margin: 0.5em auto;
     border: 1px solid red;
 }
@@ -295,6 +295,9 @@ textarea {
 .lead-detail-links-wrapper {
     width: 90%;
     margin: 0.5em auto;
+    display: flex;
+    justify-content:space-around;
+    border: 1px solid red;
 }
 
 
