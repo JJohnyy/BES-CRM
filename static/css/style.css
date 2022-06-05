@@ -133,6 +133,12 @@
     font-weight: bold;
 }
 
+.heading-2 {
+    font-size: 1.5em;
+    color: #242f62;
+    font-weight: bold;
+}
+
 .landing-text-container {
     width: 250px;
     height: auto;
@@ -233,5 +239,35 @@ label {
     flex-direction: row;
     justify-content: space-between;
 }
+
+.leads-container {
+    width: 100%;
+    height: auto;
+    margin: 1em auto;
+}
+
+.lead-wrapper {
+    width: 90%;
+    height: auto;
+    margin: 0.5em auto;
+    padding: 0.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #a5dbe5;
+    border-radius: 1em;
+}
+
+.lead-span-wrapper {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.lead-span {
+    text-align: right;
+}
+
 
 
