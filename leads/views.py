@@ -123,13 +123,13 @@ class AssignAgentView(OrganiserAndLoginRequiredMixin, generic.FormView):
     def get_form_kwargs(self, **kwargs):
         kwargs = super(AssignAgentView, self).get_form__kwargs(**kwargs)
         kwargs.update({
-            'request':self.request
+            'request': self.request
         })
         return kwargs
 
 
     def get_success_url(self):
-        return reverse('leads: lead-list')
+        return reverse('leads:lead-list')
 
     def form_valid(self, form):
         agent = form.cleaned_data["agent"]
