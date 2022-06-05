@@ -41,20 +41,17 @@
                 </div>
             {% endfor %}
             <div class="divider"></div>
-            {% if unassigned_leads.exists %}
-            <div>
-                <h1>Unassigned leads</h1>
-            </div>
-            {% for leads in unassigned_leads %}
-            <h1 class="heading-1">Unassigned leads</h1>
+           <!-- {% if unassigned_leads.exists %}
+            {% for leads in unassigned_leads %}-->
+            <h1 class="">Unassigned leads</h1>
             <div class="">
                 <div class="">
                     <div class="">
                         <h2 class="">
                             {{ lead.first_name }} {{ lead.last_name }}
                         </h2>
-                        <p class="leading-relaxed text-base">Blue bottle.</p>
-                        <!--<a href="{% url 'leads:assign-agent' lead.pk %}" class="">-->
+                        <p class="">Blue bottle.</p>
+                        <a href="{% url 'leads:assign-agent' lead.pk %}" class="">
                             assign agent
                         </a>
                     </div>
