@@ -36,11 +36,9 @@
 }
 
 .divider {
-    background-color: #242f62;
-    border: 2px solid #242f62;
-    width: 80%;
-    height: 2px;
-    margin: 1em auto;
+    border: 1px solid #242f62;
+    width: 90%;
+    margin: 2em auto;
 }
 
 .logout-button {
