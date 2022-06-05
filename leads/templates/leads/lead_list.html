@@ -4,23 +4,23 @@
 
 <section class="">
     <div class="">
-                <h1 class="heading-1">Leads</h1>
-            <div class="">
-                <a href="{% url 'leads:category-list' %}">
-                    View categories
-                </a>
-                {% if request.user.is_organiser %}
-                <a class="" href="{% url 'leads:lead-create' %}">
-                    create lead
-                </a>
-                {% endif %}
+        <h1 class="heading-1">Leads</h1>
+        <div class="links-wrapper">
+            <a class="nav-link" href="{% url 'leads:category-list' %}">
+                view categories
+            </a>
+            {% if request.user.is_organiser %}
+            <a class="nav-link" href="{% url 'leads:lead-create' %}">
+                create lead
+            </a>
+            {% endif %}
         </div>
         <div class="">
             {% for lead in leads %}
             <div class="">
                 <div class="">
                     <div class="">
-                      
+
                     </div>
                     <div class="flex-grow">
                         <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
@@ -41,7 +41,7 @@
             <div class="">
                 <div class="">
                     <div class="">
-                      
+
                     </div>
                     <div class="">
                         <h2 class="">
@@ -49,7 +49,7 @@
                         </h2>
                         <p class="leading-relaxed text-base">Blue bottle.</p>
                         <a href="{% url 'leads:assign-agent' lead.pk %}" class="">
-                            assign agent  
+                            assign agent
                         </a>
                     </div>
                 </div>
