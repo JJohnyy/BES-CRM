@@ -8,8 +8,8 @@
             <h1 class="heading-3">Leads</h1>
         </div>
         <div class="links-wrapper">
-            <a class="nav-link" href="{% url 'leads:category-list' %}">
-                view categories
+            <a class="nav-link" href="{% url 'leads:category-create' %}">
+                create a category
             </a>
             {% if request.user.is_organiser %}
             <a class="nav-link" href="{% url 'leads:lead-create' %}">

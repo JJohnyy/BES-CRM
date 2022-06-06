@@ -226,7 +226,7 @@ class CategoryCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
     form_class = CategoryModelForm
 
     def get_success_url(self):
-        return reverse("leads:category-list")
+        return reverse("leads:lead-list")
 
     def form_valid(self, form):
         category = form.save(commit=False)

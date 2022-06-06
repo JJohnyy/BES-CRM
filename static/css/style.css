@@ -450,4 +450,8 @@ media queries
     .logo {
        width: 15em;
     }
+
+    .signup-form-wrapper {
+        width: 400px;
+    }
   }

@@ -4,29 +4,29 @@
 {% block content %}
 
 <section>
-    <div class="heading-wrapper">
-      <h2 class="heading-lead-detail">lead details</h2>
-      <h1 class="heading-lead-detail-name">{{ lead.first_name }} {{ lead.last_name }}</h1>
+  <div class="heading-wrapper">
+    <h2 class="heading-lead-detail">lead details</h2>
+    <h1 class="heading-lead-detail-name">{{ lead.first_name }} {{ lead.last_name }}</h1>
+  </div>
+  <div>
+    <div class="lead-detail-links-wrapper">
+      <a class="lead-detail-link-item" href="{% url 'leads:lead-detail' lead.pk %}">Overview</a>
+      <a class="lead-detail-link-item active" href="{% url 'leads:lead-category-update' lead.pk %}">Category</a>
+      <a class="lead-detail-link-item" href="{% url 'leads:lead-update' lead.pk %}">Update</a>
     </div>
-    <div>
-      <div class="lead-detail-links-wrapper">
-        <a class="lead-detail-link-item" href="{% url 'leads:lead-detail' lead.pk %}">Overview</a>
-        <a class="lead-detail-link-item active" href="{% url 'leads:lead-category-update' lead.pk %}">Category</a>
-        <a class="lead-detail-link-item" href="{% url 'leads:lead-update' lead.pk %}">Update</a>
-      </div>
-      <div class="divider"></div>
-      <div class="lead-detail-container">
-        
-            <form class="signup-form" method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-              <div>
-                <button type="submit" class="login-button">update category</button>
-            </div>
-            </form>
-        
+    <div class="divider"></div>
+    <div class="lead-detail-container">
+      <div class="signup-form-wrapper">
+        <form class="signup-form" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div>
+            <button type="submit" class="login-button">update category</button>
+          </div>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 {% endblock content %}
