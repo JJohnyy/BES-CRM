@@ -1,5 +1,6 @@
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from agents.mixins import OrganiserAndLoginRequiredMixin
 from django.views import generic
@@ -101,6 +102,7 @@ class LeadUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
 
     def form_valid(self, form):
         form.save()
+        messages.info(self.request, "You have successfully updated this lead")
         return super(LeadUpdateView, self).form_valid(form)
 
 
@@ -126,7 +128,6 @@ class AssignAgentView(OrganiserAndLoginRequiredMixin, generic.FormView):
             'request': self.request
         })
         return kwargs
-
 
     def get_success_url(self):
         return reverse('leads:lead-list')
@@ -218,3 +219,17 @@ class LeadCategoryUpdateView(LoginRequiredMixin, generic.UpdateView):
 
     def get_success_url(self):
         return reverse("leads:lead-detail", kwargs={"pk": self.get_object().id})
+
+
+class CategoryCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
+    template_name = "leads/category_create.html"
+    form_class = CategoryModelForm
+
+    def get_success_url(self):
+        return reverse("leads:category-list")
+
+    def form_valid(self, form):
+        category = form.save(commit=False)
+        category.organisation = self.request.user.userprofile
+        category.save()
+        return super(CategoryCreateView, self).form_valid(form)
