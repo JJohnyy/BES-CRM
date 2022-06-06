@@ -31,7 +31,6 @@
     list-style-type: none;
     margin-top: 10px;
     cursor: pointer;
-    width: 200px;
 }
 
 .divider {
@@ -67,6 +66,12 @@
     margin: 0 auto;
 }
 
+
+.heading-wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
 .heading-1 {
     font-size: 3em;
     font-weight: bold;
@@ -86,7 +91,7 @@
     font-size: 1.8em;
     color: #242f62;
     font-weight: bold;
-    margin-left: 2em;
+    margin-left: 0.5em;
 }
 
 .landing-text-container {
@@ -263,13 +268,11 @@ textarea {
 
 .categories-list-container {
     width: 100%;
-    border: 1px solid red;
     height: auto;
 }
 
 .categories-list-wrapper {
     width: 80%;
-    border: 1px solid red;
 }
 
 .category-head {
@@ -435,11 +438,16 @@ media queries
     .navbar {
         width: 90%;
         flex-direction: row;
-        justify-content: space-evenly;
-     
+        justify-content: space-between;
     }
 
-    .nav-link {
-        display: inline;
+    .nav-link-item {
+        display: inline-block;
+        margin-right: 0.5em;
+        width: 10em;
+    }
+
+    .logo {
+       width: 15em;
     }
   }

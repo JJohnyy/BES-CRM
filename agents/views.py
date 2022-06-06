@@ -30,11 +30,11 @@ class AgentCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
         user = form.save(commit=False)
         user.is_agent = True
         user.is_organiser = False
-        user.set_password("Abc123")
+        user.set_password("BohemianEstates123")
         user.save()
         Agent.objects.create(
             user=user,
-            organisation=self.request.user.userprofile,
+            organisation=self.request.user.userprofile
         )
         send_mail(
             subject='Agent created',
