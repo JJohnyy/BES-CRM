@@ -110,7 +110,7 @@ class LeadDeleteView(OrganiserAndLoginRequiredMixin, generic.DeleteView):
 
     def get_queryset(self):
         user = self.request.user
-        return Lead.objects.filer(organisation=user.userprofile)
+        return Lead.objects.filter(organisation=user.userprofile)
 
     def get_success_url(self):
         return reverse('leads:lead-list')

@@ -12,7 +12,7 @@
                     <a class="sign-button" href="{% url 'signup' %}">Signup</a>
                 </li>
                 {% else %}
-                {% if requested.user.is_organiser %}
+                {% if request.user.is_organiser %}
                 <li>
                     <a class="nav-link" href="{% url 'agents:agent-list' %}">Agents</a>
                 </li>

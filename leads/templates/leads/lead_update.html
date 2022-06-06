@@ -24,6 +24,11 @@
           <button type="submit" class="login-button">update lead</button>
         </div>
       </form>
+      <div class="">
+        <a href="{% url 'leads:lead-delete' lead.pk %}" class="sign-button">
+            delete lead
+        </a>
+    </div>
     </div>
   </div>
 </section>
