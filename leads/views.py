@@ -133,7 +133,7 @@ class AssignAgentView(OrganiserAndLoginRequiredMixin, generic.FormView):
 
     def form_valid(self, form):
         agent = form.cleaned_data["agent"]
-        lead = lead.objects.get(id=self.kwargs["pk"])
+        lead = Lead.objects.get(id=self.kwargs["pk"])
         lead.agent = agent
         lead.save()
         return super(AssignAgentView, self).form_valid(form)
