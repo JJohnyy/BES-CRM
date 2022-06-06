@@ -3,9 +3,9 @@
 
 {% block content %}
 
-<h1 class="heading-1">Lead create</h1>
+<h1 class="heading-1">Agent create</h1>
 <div class="signup-form-wrapper">
-<form method="POST">
+<form class="signup-form" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
     <div>
