@@ -110,6 +110,7 @@
     color: #242f62;
     cursor: pointer;
     text-decoration: none;
+    margin-top: 10em;
 }
 
 .nav-link:visited {
@@ -396,6 +397,7 @@ textarea {
     display: block;
     text-align: center;
     border: none;
+    cursor: pointer;
 }
 
 .login-button-navbar {
