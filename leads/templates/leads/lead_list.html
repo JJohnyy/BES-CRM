@@ -4,7 +4,9 @@
 
 <section class="">
     <div class="">
-        <h1 class="heading-3">Leads</h1>
+        <div class="heading-wrapper">
+            <h1 class="heading-3">Leads</h1>
+        </div>
         <div class="links-wrapper">
             <a class="nav-link" href="{% url 'leads:category-list' %}">
                 view categories
@@ -18,27 +20,28 @@
         <div class="divider"></div>
         <div class="">
             {% for lead in leads %}
-                <div class="leads-container">
-                    <div class="lead-wrapper">
-                        <h2>
-                            <a class="nav-link" href="{% url 'leads:lead-detail' lead.pk %}">{{ lead.first_name }} {{ lead.last_name }}</a>
-                        </h2>
-                        <div class="lead-span-wrapper">
+            <div class="leads-container">
+                <div class="lead-wrapper">
+                    <h2>
+                        <a class="nav-link" href="{% url 'leads:lead-detail' lead.pk %}">{{ lead.first_name }}
+                            {{ lead.last_name }}</a>
+                    </h2>
+                    <div class="lead-span-wrapper">
                         {% if lead.category %}
                         <span class="lead-span">
                             {{ lead.category.name }}
                         </span>
-                    {% else %}
+                        {% else %}
                         <span class="lead-span">
                             Unassigned
                         </span>
-                    {% endif %}
-                         </div>
-                        <a href="{% url 'leads:lead-update' lead.pk %}" class="lead-link">
-                            edit
-                        </a>
+                        {% endif %}
                     </div>
+                    <a href="{% url 'leads:lead-update' lead.pk %}" class="lead-link">
+                        edit
+                    </a>
                 </div>
+            </div>
             {% endfor %}
             <div class="divider"></div>
             <h1 class="heading-3">Unassigned leads</h1>
