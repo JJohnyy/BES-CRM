@@ -2,36 +2,6 @@
 
 {% block content %}
 
-<section class="">
-  <div class="">
-    <div class="">
-      <h1 class="">
-        {{ category.name }}
-      </h1>
-      <p class="">
-        leads under this category
-      </p>
-    </div>
-    <div class="">
-      <table class="">
-        <thead>
-          <tr>
-            <th class="">First Name</th>
-            <th class="">Last Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for lead in category.leads.all %}
-          <tr>
-            <td class="">
-              <a href="{% url 'leads:lead-detail' lead.pk %}">{{ lead.first_name }}</a></td>
-            <td class="">{{ lead.last_name }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
+
 
 {% endblock %}
