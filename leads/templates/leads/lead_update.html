@@ -16,19 +16,20 @@
     </div>
     <div class="divider"></div>
     <div class="lead-detail-container">
-
-      <form class="signup-form" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
+      <div class="signup-form-wrapper">
+        <form class="signup-form" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <div>
+            <button type="submit" class="login-button">update lead</button>
+          </div>
+        </form>
         <div>
-          <button type="submit" class="login-button">update lead</button>
-        </div>
-      </form>
-      <div class="">
         <a href="{% url 'leads:lead-delete' lead.pk %}" class="sign-button">
-            delete lead
+          delete lead
         </a>
-    </div>
+      </div>
+      </div>
     </div>
   </div>
 </section>

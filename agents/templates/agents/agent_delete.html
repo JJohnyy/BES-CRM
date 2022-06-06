@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<a href="#"></a>
-<h1>Are you sure you want to delete this agent?</h1>
+<h1 class="heading-1">Are you sure you want to delete this agent?</h1>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Submit</button>
+    <div>
+        <button class="sign-button" type="submit">delete agent</button>
+    </div>
 </form>
 {% endblock %}
