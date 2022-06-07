@@ -1,10 +1,14 @@
 
 
-$('.lead-detail-links-wrapper').on('click', '.lead-detail-link-item', function () {
-    $('.lead-detail-link-item').removeClass('active');
-    $(this).addClass('active');
+$(document).ready(function() {
+    $(".lead-detail-link-item").click(function () {
+        if(!$(this).hasClass('active'))
+        {
+            $(".lead-detail-link-item.active").removeClass("active");
+            $(this).addClass("active");        
+        }
+    });
 });
-
 
 
 $(function () {
