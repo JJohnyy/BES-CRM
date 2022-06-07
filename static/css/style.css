@@ -321,6 +321,7 @@ textarea {
 
 .active {
     color: #b1415c;
+    font-weight: bold;
 }
 
 .lead-detail-container {

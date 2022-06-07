@@ -211,9 +211,11 @@ class LeadCategoryUpdateView(LoginRequiredMixin, generic.UpdateView):
     def get_queryset(self):
         user = self.request.user
         if user.is_organiser:
-            queryset = Lead.objects.filter(organisation=user.userprofile)
+            queryset = Lead.objects.filter(
+                organisation=user.userprofile)
         else:
-            queryset = Lead.objects.filter(organisation=user.agent.organisation)
+            queryset = Lead.objects.filter(
+                organisation=user.agent.organisation)
             queryset = queryset.filter(agent__user=user)
         return queryset
 
