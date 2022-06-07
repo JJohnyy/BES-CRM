@@ -7,6 +7,16 @@ $(document).ready(function(){
   });
 
 
+  $(document).ready(function(){
+    $('.nav-link').click(function(){
+     // Removing class from all list elements
+     $('.nav-link').removeClass('active');
+     // Adding class to clicked list element
+     $(this).addClass('active');
+    });
+   });
+
+
 
 
 $(function () {
