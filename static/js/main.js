@@ -23,9 +23,7 @@ $(document).ready(function () {
     $(this).siblings().removeClass("active");
  });*/
 
-
-
-
+ 
 $(function () {
     count = 0;
     wordsArray = ["BES CRM", "Bohemian Estates", 'BES'];
