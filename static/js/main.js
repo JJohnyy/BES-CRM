@@ -1,20 +1,21 @@
 
-$(document).ready(function(){
-    $('.navbar-link').click(function(){
-      $('.navbar-link').removeClass("active");
-      $(this).addClass("active");
-  });
-  });
 
-
-  $(document).ready(function(){
-    $('.nav-link').click(function(){
-     // Removing class from all list elements
-     $('.nav-link').removeClass('active');
-     // Adding class to clicked list element
-     $(this).addClass('active');
+$(document).ready(function () {
+    $('.navbar-link').click(function () {
+        $('.navbar-link').removeClass("active");
+        $(this).addClass("active");
     });
-   });
+});
+
+
+$(document).ready(function () {
+    $('.lead-detail-link-item').click(function () {
+        // Removing class from all list elements
+        $('.lead-detail-link-item').removeClass('active');
+        // Adding class to clicked list element
+        $(this).addClass('active');
+    });
+});
 
 
 
