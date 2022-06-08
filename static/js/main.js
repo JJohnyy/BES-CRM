@@ -1,8 +1,8 @@
 
 
 $(document).ready(function () {
-    $('.navbar-link').click(function () {
-        $('.navbar-link').removeClass("active");
+    $('.nav-link-item').click(function () {
+        $('.nav-link-item').removeClass("active");
         $(this).addClass("active");
     });
 });
@@ -10,9 +10,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('.lead-detail-link-item').click(function () {
-        // Removing class from all list elements
         $('.lead-detail-link-item').removeClass('active');
-        // Adding class to clicked list element
         $(this).addClass('active');
     });
 });
@@ -23,10 +21,10 @@ $(document).ready(function () {
     $(this).siblings().removeClass("active");
  });*/
 
- 
+
 $(function () {
     count = 0;
-    wordsArray = ["BES CRM", "Bohemian Estates", 'BES'];
+    wordsArray = ["BES CRM", "Bohemian Estates", "BES"];
     setInterval(function () {
         count++;
         $("#heading").fadeOut(400, function () {
