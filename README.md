@@ -1,5 +1,5 @@
 # Bohemian Estates International Client repoting system
-![BES](/workspace/BES-CRM/static/images/readme-files/responsive.png)
+![BES](https://res.cloudinary.com/dontkrfjd/image/upload/v1654698504/responsive_akitqp.png)
 
 # Table of content
 
@@ -49,6 +49,7 @@ From the resulting interviews, the user goals have been defined:
 # Wireframes
 
 
+
 ## Design choices
 Because this project is being created for Bohemian Estates International and the requirements include the need for it to be the same as existing design, following design choices will be based on this.
 
@@ -61,7 +62,7 @@ Using font weight of 400.
 #### Headings
 
 ### Colors
-
+![colors](https://res.cloudinary.com/dontkrfjd/image/upload/v1654698505/palet_color_uu8gtm.png)
 
 # Structure
 ## App flow
