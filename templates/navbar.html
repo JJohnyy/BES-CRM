@@ -13,11 +13,11 @@
                 </li>
                 {% else %}
                 {% if request.user.is_organiser %}
-                <li class="nav-link-item navbar-link">
+                <li class="nav-link-item">
                     <a class="nav-link" href="{% url 'agents:agent-list' %}">Agents</a>
                 </li>
                 {% endif %}
-                <li class="nav-link-item navbar-link active">
+                <li class="nav-link-item">
                     <a class="nav-link" href="{% url 'leads:lead-list' %}">Leads</a>
                 </li>
                 {% endif %}
