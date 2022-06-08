@@ -22,6 +22,7 @@ class SignupView(generic.CreateView):
     form_class = CustomUserCreationForm
 
     def get_success_url(self):
+        messages.success(self.request, "You have successfully created an account")
         return reverse('login')
 
 
@@ -102,7 +103,7 @@ class LeadUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
 
     def form_valid(self, form):
         form.save()
-        messages.info(self.request, "You have successfully updated this lead")
+        messages.info(self.request, "You have successfully updated a lead")
         return super(LeadUpdateView, self).form_valid(form)
 
 

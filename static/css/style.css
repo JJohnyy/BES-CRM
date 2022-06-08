@@ -348,6 +348,20 @@ textarea {
 
 
 
+/* messages  */
+
+.message-wrapper {
+    width: 250px;
+    margin: 0.5em auto;
+}
+
+.message {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+
 
 
 

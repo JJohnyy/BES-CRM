@@ -42,6 +42,9 @@
                         edit
                     </a>
                 </div>
+            { % empty %}
+                <p>there are currently no leads</p>
+            {% endfor %}
             </div>
             {% endfor %}
             <div class="divider"></div>
@@ -62,6 +65,8 @@
                     </div>
                 </div>
             </div>
+           { % empty %}
+                <p>there are currently no leads</p>
             {% endfor %}
         </div>
         {% endif %}
