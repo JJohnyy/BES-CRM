@@ -42,12 +42,12 @@
                         edit
                     </a>
                 </div>
-            { % empty %}
-                <p>there are currently no leads</p>
+                {% empty %}
+                <p class="no-leads">there are currently no leads</p>
             </div>
             {% endfor %}
             <div class="divider"></div>
-            <div  class="heading-wrapper">
+            <div class="heading-wrapper">
                 <h1 class="heading-3">Unassigned leads</h1>
             </div>
             {% if unassigned_leads.exists %}
@@ -63,9 +63,9 @@
                         </a>
                     </div>
                 </div>
+                {% empty %}
+                <p class="no-leads">there are currently no unassigned_leads leads</p>
             </div>
-           { % empty %}
-                <p class="no_leads">there are currently no leads</p>
             {% endfor %}
         </div>
         {% endif %}
