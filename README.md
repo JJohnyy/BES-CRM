@@ -120,12 +120,14 @@ The organiser is the only user who can see agent - navbar link, agent list and c
 predefined AbstracUser - added:
 
 | Name | Type | Other Details |
+|--|--|--|
 | is organiser | BooleanField | True |
 | is agent | BooleanField | False |
 
 
 ### USerProfile
 | Name | Type | Other details |
+|--|--|--|
 | user | OneToOneField | on delete CASCADE |
 
 
@@ -146,12 +148,14 @@ predefined AbstracUser - added:
 
 ### Agent
 | Name | Type | Other Details |
+|--|--|--|
 | user | OneToOneField | on delete CASCADE |
 | organisation | ForeignKey | on delete CASCADE |
 
 
 ### Category
 | Name | Type | Other Details |
+|--|--|--|
 | name | CharField | max length 30 |
 | organisation | ForeginKey | on delete CASCADE |
 
