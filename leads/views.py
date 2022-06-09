@@ -86,6 +86,7 @@ class LeadCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
             from_email='test@test.com',
             recipient_list=['test2@test.com']
         )
+        messages.success(self.request, "Lead was created")
         return super(LeadCreateView, self).form_valid(form)
 
 
