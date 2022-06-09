@@ -163,12 +163,16 @@ label {
 
 .signup-form ul li {
     list-style-type: none;
-    display: none;
+    font-size: 1.3em;
+    margin-left: 1em;
+    margin-top: 0.3em;
+    /*display: none;*/
 }
 
 .signup-form span {
     font-size: 1.3em;
-    display: none;
+    margin-left: 1em;
+    margin-top: 0.3em;
 }
 
 .signup-form p {
@@ -350,17 +354,24 @@ textarea {
 
 /* messages  */
 
-.message-wrapper {
+.messages {
     width: 250px;
     margin: 0.5em auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.messages {
-    background-color:#becfdf;
-    color: #242f62;
+.success {
+    width: auto;
+    background-color:#f9f8f3;
+    color: #188639;
     margin: 0.5em auto;
     font-size: 1.5em;
     font-weight: bold;
+    list-style-type: none;
+    padding: 0.3em;
+    border-radius: 1em;
 }
 
 .no_leads {

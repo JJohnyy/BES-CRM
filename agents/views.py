@@ -39,6 +39,7 @@ class AgentCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
             from_email="admin@test.com",
             recipient_list=[user.email]
         )
+        messages.success(self.request, "You have successfully created an agent")
         return super(AgentCreateView, self).form_valid(form)
 
 
