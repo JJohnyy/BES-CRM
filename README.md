@@ -164,12 +164,30 @@ Landing page - created with very simple design, with feature of changing heading
 ## Heading
 ![landing-page](https://res.cloudinary.com/dontkrfjd/image/upload/v1654707277/Animation_mbvv0j.gif)
 
+
+## Empty leads
+ if there are no leads available, message is displayed to inform, there are currently no leads available
+![no-leads](https://res.cloudinary.com/dontkrfjd/image/upload/v1654761203/no_leads_xchens.png)
+
+
 ## Links
 Navigation links are created to navigate a user thru updating, creating and deleting processes
 ![links](https://res.cloudinary.com/dontkrfjd/image/upload/v1654707277/lead-detail-links_gii2r8.png)
 
 
 ## Messages
+Messages are displayed for continual feedback to the user on their interactions and follow the same layout for both mobile and desktop designs. These interactions include:
+
+* Sign up
+![sign-up-message](https://res.cloudinary.com/dontkrfjd/image/upload/v1654761204/message-signup_cn0l1e.png)
+
+* Create a lead
+![lead-create-message](https://res.cloudinary.com/dontkrfjd/image/upload/v1654761203/messages-lead-created_qn4rtr.png)
+
+* Create an agent
+![create-agent-message](https://res.cloudinary.com/dontkrfjd/image/upload/v1654761203/message-agent-created_kagobs.png)
+
+
 
 ## Authentication
 
@@ -210,11 +228,15 @@ I used four types buttons to navigate the site
 ![blue](https://res.cloudinary.com/dontkrfjd/image/upload/v1654709684/blue-btn_pnbtn0.png)
 
 
+
+
 ## Features to be implemented
 * FollowUp
- * this feature would allow users to update what is going with a lead easire then just thrue Categories
+     * this feature would allow users to update what is going with a lead easire then just thrue Categories
 
-* 
+* Unassigned lead delete
+    * the button allowing unassigned lead to delete stright away should be implemented
+
 
 
 
