@@ -12,7 +12,7 @@ from .forms import (
     AssignAgentForm, 
     LeadCategoryUpdateForm, 
     CategoryModelForm
-    )
+)
 
 # Create your views here.
 

@@ -3,12 +3,13 @@
 {% block content %}
 
 <section>
-    <div>
-        <h1 class="heading-1">Agents</h1>
+    <div class="heading-wrapper">
+        <h1 class="heading-3">Agents</h1>
     </div>
     <div class="links-wrapper">
         <a  class="nav-link" href="{% url 'agents:agent-create' %}">create a new agent</a>
     </div>
+    <div class="divider"></div>
     <div>
         <div>
             {% for agent in object_list %}
