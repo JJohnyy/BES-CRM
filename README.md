@@ -263,6 +263,111 @@ I used four types buttons to navigate the site
 |django auth|User authentication|[auth](https://docs.djangoproject.com/en/3.2/topics/auth/ "auth")|
 
 
+## Tools
+| Tools | Description | Link |
+|--|--|--|
+| Google Fonts| Fonts |[Google Fonts](https://fonts.google.com/ "Fonts")|
+| ColorMind|Colour pallet| [coolors](http://colormind.io/ "colormind")|
+| GitPod | Development environment |[Gitpod](https://www.gitpod.io/ "Gitpod")|
+| Balsamic | Wireframes |[Balsamic](https://balsamiq.com/wireframes/ "Balsamic")|
+| Font Awesome | Icons |[Font Awesome library](https://fontawesome.com/ "Font Awesome")|
+| W3C | Markup Validation | [W3C Markup Validation Service](https://validator.w3.org/ "W3C")|
+| W3C | CSS Validation | [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C")|
+| PEP8 | Python Validation | [PEP8](http://pep8online.com/ "PEP8")|
+| JSHint | JavaScript and JQuery Validation | [JSHint](https://jshint.com/ "JSHint")|
+
+
+
+## Bugs
+
+
+
+# Deployment
+
+This project was created using GitHub and the code was written using Gitpod. This project is also deployed to Heroku with Heroku deployment set to *Enable Automatic Deploys*. This means that every time that the repository was pushed to, Heroku was updated also.
+
+The live link to the application can be found [here]()
+
+## Local Deployment
+
+As Gitpod was the IDE that was used to create the project, the following local deployment steps are specific to Gitpod.
+
+### Cloudinary
+* Visit Cloudinary by following this [link]()
+* Click on the *Sign Up For Free* button
+* When the account is created, you should see the *API Environment variable*, we will need this for a later process.
+
+### GitHub
+* Visit Github by following this [link]()
+* Create an account or log in
+
+
+* In the terminal run
+```
+pip3 install -r requirements.txt
+```
+* In the root directory create a file called **env.py** and add the following content, the content of these, must match the Config Vars in the Heroku deployment section
+
+```py
+import os
+
+os.environ['DATABASE_URL'] = "FROM HEROKU DEPLOYMENT SECTION, DATABASE_URL CONFIG VAR"
+os.environ['SECRET_KEY'] = "FROM HEROKU DEPLOYMENT SECTION SECRET_KEY CONFIG VAR"
+os.environ['CLOUDINARY_URL'] = "API ENVIRONMENT VARIABLE REMOVE 'CLOUDINARY_URL=' FROM BEGINING"
+os.environ['DEVELOP'] = '1'
+
+
+* Add the env.py file to the .gitignore file to ensure that its contents are not made public
+
+* Migrate the database models with the following command in the terminal
+
+* Create a superuser and set up the credentials with the following command
+```
+python3 manage.py createsuperuser
+```
+
+* Run the application locally with the command
+```
+python3 manage.py runserver
+
+
+
+### Deployment via Heroku
+* Visit [heroku.com]()
+* Create a new account or sign in
+* From the dashboard, select **New** and then **Create new app**
+* Enter an individual app name into the text box, select a region from the dropdown and then press **Create app**
+* A Heroku app has now been created and the **Deploy** tab is opened. 
+* Open the *Resources* tab and in the search bar for *Add-ons* type *Postgres*
+* Select *Heroku Postgres*, on the popup, ensure the dropdown is set to *Hobby Dev - Free* and then *Submit Order Form*
+* Open the *Settings* tab and then click on the *Reveal Config Vars* button and the database_url should be populated.
+* Fill out the rest of the config vars with the content of the table below by filling out the *Key* and *Value* and clicking on *Add* for each entry 
+
+
+* In the buildpacks section of the settings tab, click on **Add Buildpack**, select **python** and then save changes
+* Open the **Deploy** tab
+* In the deployment method section, select **GitHub** and confirm the connection.
+* Enter the repo-name into the text box and click **Search**. When the correct repo appears below, click **Connect**
+* Return to the Gitpod workspace and in the root directory create a file called *Procfile*
+* In the *Procfile* enter the following line including your project name
+```
+web: gunicorn YOUR_PROJECT_NAME.wsgi
+```
+* Add and commit to GitHub
+```
+git add .
+git commit -m "commit message goes here"
+git push
+```
+* Add your Heroku app URL to ALLOWED_HOSTS in your settings.py file
+```
+ALLOWED_HOSTS = ['YOUR_PROJECT_NAME.herokuapp.com', 'localhost']
+
+
+
+
+
+
 
 
 
