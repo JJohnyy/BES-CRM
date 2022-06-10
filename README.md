@@ -370,6 +370,24 @@ ALLOWED_HOSTS = ['YOUR_PROJECT_NAME.herokuapp.com', 'localhost']
 
 
 
+## Code Validation
+
+### HTML
+The HTML code within the application has been validated by [W3C Markup Validation Service](https://validator.w3.org/ "W3C"). Pages were put through the validator seperatly and the results can be seen below.
+![Sign Up Form](https://res.cloudinary.com/dontkrfjd/image/upload/v1654709117/SignUp_bytmsk.png)
+
+### CSS
+The CSS code within the application has been validated by [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C"), and the results can be seen below.
+
+
+### Python
+The Python code within the application has been validated by [PEP* Validation Service](http://pep8online.com/ "PEP*"). Files were put through the validator separately and the results can be seen below.
+
+
+
+
+
+
 
 
 
