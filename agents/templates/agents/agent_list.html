@@ -7,7 +7,7 @@
         <h1 class="heading-3">Agents</h1>
     </div>
     <div class="links-wrapper">
-        <a  class="nav-link" href="{% url 'agents:agent-create' %}">create a new agent</a>
+        <a class="nav-link" href="{% url 'agents:agent-create' %}">create a new agent</a>
     </div>
     <div class="divider"></div>
     <div>
@@ -15,16 +15,16 @@
             {% for agent in object_list %}
             <div class="leads-container">
                 <div class="lead-wrapper">
-                    <h2 class="nav-link"> 
-                        {{ agent.user.first_name }} {{ agent.user.last_name }}</a>
+                    <h2 class="nav-link">
+                        <a class="nav-link" href="{% url 'agents:agent-detail' agent.pk %}">{{ agent.user.first_name }} {{ agent.user.last_name }}</a>
                     </h2>
                     <div class="lead-span-wrapper">
-                   
-                    <span class="lead-span">
-                        {{ lead.category.name }}
-                    </span>
-               
-                     </div>
+
+                        <span class="lead-span">
+                            {{ lead.category.name }}
+                        </span>
+
+                    </div>
                     <a href="{% url 'agents:agent-update' agent.pk %}" class="lead-link">
                         edit
                     </a>
