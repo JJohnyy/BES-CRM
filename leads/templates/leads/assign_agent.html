@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block content %}
-    <h1 class="heading-1">Assign agent</h1>
-    <form method="POST" class="signup-form-wrapper">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <div>
-            <button type="submit" class="login-button">assign agent</button>
-        </div>
-    </form>
+<h1 class="heading-1">Assign agent</h1>
+<form method="POST" class="signup-form-wrapper">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+        <button type="submit" class="login-button">assign agent</button>
+    </div>
+</form>
 {% endblock content %}

@@ -4,30 +4,30 @@
 {% block content %}
 
 <section>
-    <div class="heading-wrapper">
-      <h2 class="heading-lead-detail">agent detail</h2>
-      <h1 class="heading-lead-detail-name">{{ agent.user.username }}</h1>
+  <div class="heading-wrapper">
+    <h2 class="heading-lead-detail">agent detail</h2>
+    <h1 class="heading-lead-detail-name">{{ agent.user.username }}</h1>
+  </div>
+  <div>
+    <div class="lead-detail-links-wrapper">
     </div>
-    <div>
-      <div class="lead-detail-links-wrapper">
-      </div>
-      <div class="divider"></div>
-      <div class="lead-detail-container">
-        <div class="signup-form-wrapper">
-          <form class="signup-form" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <div>
-              <button type="submit" class="login-button">update agent</button>
-            </div>
-          </form>
+    <div class="divider"></div>
+    <div class="lead-detail-container">
+      <div class="signup-form-wrapper">
+        <form class="signup-form" method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
           <div>
+            <button type="submit" class="login-button">update agent</button>
+          </div>
+        </form>
+        <div>
           <a href="{% url 'agents:agent-delete' agent.pk %}" class="sign-button">
             delete agent
           </a>
         </div>
-        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 {% endblock content %}

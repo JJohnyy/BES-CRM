@@ -5,12 +5,12 @@
 
 <h1 class="heading-1">Agent create</h1>
 <div class="signup-form-wrapper">
-<form class="signup-form" method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <div>
-        <button class="login-button" type="submit">Submit</button>
-    </div>
-</form>
+    <form class="signup-form" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <button class="login-button" type="submit">Submit</button>
+        </div>
+    </form>
 </div>
 {% endblock content %}
