@@ -48,10 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'leads',
-    'agents',
-
-    'crispy_forms',
-
+    'agents'
 ]
 
 MIDDLEWARE = [
