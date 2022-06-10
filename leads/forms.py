@@ -18,7 +18,7 @@ class LeadModelForm(forms.ModelForm):
             'phone',
             'email',
             'description',
-            'agent', 
+            'agent',
         )
 
 
@@ -59,4 +59,3 @@ class CategoryModelForm(forms.ModelForm):
         fields = (
             'name',
         )
-       

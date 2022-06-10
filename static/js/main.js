@@ -1,27 +1,4 @@
 
-
-$(document).ready(function () {
-    $('.nav-link-item').click(function () {
-        $('.nav-link-item').removeClass("active");
-        $(this).addClass("active");
-    });
-});
-
-
-$(document).ready(function () {
-    $('.lead-detail-link-item').click(function () {
-        $('.lead-detail-link-item').removeClass('active');
-        $(this).addClass('active');
-    });
-});
-
-/*$(".lead-detail-link-item").on("click", function(e){
-    e.preventDefault();
-    $(this).addClass("active"); 
-    $(this).siblings().removeClass("active");
- });*/
-
-
 $(function () {
     count = 0;
     wordsArray = ["BES CRM", "Bohemian Estates", "BES"];

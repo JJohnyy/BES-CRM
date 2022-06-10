@@ -4,10 +4,11 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
+
 class User(AbstractUser):
     is_organiser = models.BooleanField(default=True)
     is_agent = models.BooleanField(default=False)
-    
+
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -23,8 +24,14 @@ class Lead(models.Model):
     address = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
     organisation = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
-    agent = models.ForeignKey('Agent', null=True, blank=True, on_delete=models.SET_NULL)
-    category = models.ForeignKey('Category', related_name="leads", null=True, blank=True, on_delete=models.SET_NULL)
+    agent = models.ForeignKey(
+        'Agent', null=True, blank=True,
+        on_delete=models.SET_NULL
+    )
+    category = models.ForeignKey(
+        'Category', related_name="leads", null=True,
+        blank=True, on_delete=models.SET_NULL
+    )
     email = models.EmailField()
     description = models.TextField()
 
@@ -41,7 +48,7 @@ class Agent(models.Model):
 
 
 class Category(models.Model):
-    name= models.CharField(max_length=30)
+    name = models.CharField(max_length=30)
     organisation = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
 
     def __str__(self):

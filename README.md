@@ -237,6 +237,8 @@ I used four types buttons to navigate the site
 * Unassigned lead delete
     * the button allowing unassigned lead to delete stright away should be implemented
 
+* email communication
+    * I wasnt able to finish email communication and process for password reset
 
 
 

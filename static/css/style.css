@@ -303,7 +303,7 @@ textarea {
 
 .heading-lead-detail {
     font-size: 1.4em;
-    color: #becfdf;
+    color: black;
     margin-bottom: 0.2em;
 }
 
@@ -342,13 +342,11 @@ textarea {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    justify-self: space-between;
 }
 
 .lead-detail-span {
     font-size: 1.4em;
-    margin-top: 0.5em;
-    justify-self: space-between;
+    margin-top: 0.5em; 
     border-bottom: 1px solid #becfdf;
 }
 

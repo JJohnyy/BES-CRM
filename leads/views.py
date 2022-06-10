@@ -1,16 +1,15 @@
 from django.core.mail import send_mail
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import reverse
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from agents.mixins import OrganiserAndLoginRequiredMixin
 from django.views import generic
-from .models import Lead, Agent, Category
+from .models import Lead, Category
 from .forms import (
-    LeadForm, 
-    LeadModelForm, 
-    CustomUserCreationForm, 
-    AssignAgentForm, 
-    LeadCategoryUpdateForm, 
+    LeadModelForm,
+    CustomUserCreationForm,
+    AssignAgentForm,
+    LeadCategoryUpdateForm,
     CategoryModelForm
 )
 
@@ -22,7 +21,9 @@ class SignupView(generic.CreateView):
     form_class = CustomUserCreationForm
 
     def get_success_url(self):
-        messages.success(self.request, "You have successfully created an account")
+        messages.success(
+            self.request, "You have successfully created an account"
+            )
         return reverse('login')
 
 
@@ -37,9 +38,13 @@ class LeadListView(LoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         user = self.request.user
         if user.is_organiser:
-            queryset = Lead.objects.filter(organisation=user.userprofile, agent__isnull=False)
+            queryset = Lead.objects.filter(
+                organisation=user.userprofile, agent__isnull=False
+                )
         else:
-            queryset = Lead.objects.filter(organisation=user.agent.organisation, agent__isnull=False)
+            queryset = Lead.objects.filter(
+                organisation=user.agent.organisation, agent__isnull=False
+                )
             queryset = queryset.filter(agent__user=user)
         return queryset
 
@@ -47,12 +52,14 @@ class LeadListView(LoginRequiredMixin, generic.ListView):
         context = super(LeadListView, self).get_context_data(**kwargs)
         user = self.request.user
         if user.is_organiser:
-            queryset = Lead.objects.filter(organisation=user.userprofile, agent__isnull=True)
+            queryset = Lead.objects.filter(
+                organisation=user.userprofile, agent__isnull=True
+                )
             context.update({
                 'unassigned_leads': queryset
             })
         return context
-    
+
 
 class LeadDetailView(LoginRequiredMixin, generic.DetailView):
     template_name = 'leads/lead_detail.html'
@@ -62,9 +69,13 @@ class LeadDetailView(LoginRequiredMixin, generic.DetailView):
     def get_queryset(self):
         user = self.request.user
         if user.is_organiser:
-            queryset = Lead.objects.filter(organisation=user.userprofile)
+            queryset = Lead.objects.filter(
+                organisation=user.userprofile
+                )
         else:
-            queryset = Lead.objects.filter(organisation=user.agent.organisation)
+            queryset = Lead.objects.filter(
+                organisation=user.agent.organisation
+                )
             queryset = queryset.filter(agent__user=user)
         return queryset
 
@@ -97,8 +108,7 @@ class LeadUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
     def get_queryset(self):
         user = self.request.user
         return Lead.objects.filter(organisation=user.userprofile)
-        
-    
+
     def get_success_url(self):
         return reverse('leads:lead-list')
 
@@ -118,7 +128,7 @@ class LeadDeleteView(OrganiserAndLoginRequiredMixin, generic.DeleteView):
 
     def get_success_url(self):
         return reverse('leads:lead-list')
-      
+
 
 class AssignAgentView(OrganiserAndLoginRequiredMixin, generic.FormView):
     template_name = 'leads/assign_agent.html'
@@ -160,10 +170,11 @@ class CategoryListView(LoginRequiredMixin, generic.ListView):
             )
 
         context.update({
-            "unassigned_lead_count": queryset.filter(category__isnull=True).count()
+            "unassigned_lead_count": queryset.filter(
+                category__isnull=True).count()
         })
         return context
-    
+
     def get_queryset(self):
         user = self.request.user
         if user.is_organiser:
@@ -222,7 +233,9 @@ class LeadCategoryUpdateView(LoginRequiredMixin, generic.UpdateView):
         return queryset
 
     def get_success_url(self):
-        return reverse("leads:lead-detail", kwargs={"pk": self.get_object().id})
+        return reverse(
+            "leads:lead-detail", kwargs={"pk": self.get_object().id}
+            )
 
 
 class CategoryCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
