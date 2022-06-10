@@ -2,11 +2,13 @@
 {% load static %}
 {% block content %}
 <h1 class="heading-1">Are you sure you want to delete this agent?</h1>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <div>
-        <button class="sign-button" type="submit">delete agent</button>
-    </div>
-</form>
+<div class="signup-form-wrapper">
+    <form class="signup-form" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <button class="sign-button" type="submit">delete agent</button>
+        </div>
+    </form>
+</div>
 {% endblock %}
