@@ -364,28 +364,45 @@ git push
 * Add your Heroku app URL to ALLOWED_HOSTS in your settings.py file
 ```
 ALLOWED_HOSTS = ['YOUR_PROJECT_NAME.herokuapp.com', 'localhost']
-
-
-
-
+```
 
 
 ## Code Validation
 
 ### HTML
 The HTML code within the application has been validated by [W3C Markup Validation Service](https://validator.w3.org/ "W3C"). Pages were put through the validator seperatly and the results can be seen below.
-![Sign Up Form](https://res.cloudinary.com/dontkrfjd/image/upload/v1654709117/SignUp_bytmsk.png)
+
+* Landing page  
+![validator html landing](https://res.cloudinary.com/dontkrfjd/image/upload/v1654867236/w3c-validator-landing-page_hqr5hp.png)
+
+* Lead List
+![validator html lead list](https://res.cloudinary.com/dontkrfjd/image/upload/v1654867236/w3c-validator-lead-list_rmj2yw.png)
+
 
 ### CSS
 The CSS code within the application has been validated by [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C"), and the results can be seen below.
+![css validator](https://res.cloudinary.com/dontkrfjd/image/upload/v1654867236/css_validator_zzfgur.png)
 
 
 ### Python
 The Python code within the application has been validated by [PEP* Validation Service](http://pep8online.com/ "PEP*"). Files were put through the validator separately and the results can be seen below.
+![Sign Up Form](https://res.cloudinary.com/dontkrfjd/image/upload/v1654709117/SignUp_bytmsk.png)
 
+#### lead application
 
+* views
+![leads views pep8](https://res.cloudinary.com/dontkrfjd/image/upload/v1654867236/pep8-wiews-leads_imkfcj.png)
+* Models
+![models pep8](https://res.cloudinary.com/dontkrfjd/image/upload/v1654867236/pep8-models-views_uuaglm.png)
+* forms
+![leads forms pep8](https://res.cloudinary.com/dontkrfjd/image/upload/v1654867236/pep8-forms-leads_ueuvo4.png)
 
+#### agents application
 
+* views
+![agents views pep8](https://res.cloudinary.com/dontkrfjd/image/upload/v1654867236/pep8-views-agents_npwvrc.png)
+* forms 
+![agent forms pep8](https://res.cloudinary.com/dontkrfjd/image/upload/v1654867237/pep8-forms-agents_tyd5hf.png)
 
 
 
