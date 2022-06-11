@@ -291,19 +291,19 @@ bugs I encountered during development:
 
 This project was created using GitHub and the code was written using Gitpod. This project is also deployed to Heroku with Heroku deployment set to *Enable Automatic Deploys*. This means that every time that the repository was pushed to, Heroku was updated also.
 
-The live link to the application can be found [here]()
+The live link to the application can be found [here](https://bes-crm.herokuapp.com)
 
 ## Local Deployment
 
 As Gitpod was the IDE that was used to create the project, the following local deployment steps are specific to Gitpod.
 
 ### Cloudinary
-* Visit Cloudinary by following this [link]()
+* Visit Cloudinary by following this [link](https://cloudinary.com)
 * Click on the *Sign Up For Free* button
 * When the account is created, you should see the *API Environment variable*, we will need this for a later process.
 
 ### GitHub
-* Visit Github by following this [link]()
+* Visit Github by following this [link](https://github.com/JJohnyy/BES-CRM)
 * Create an account or log in
 
 
