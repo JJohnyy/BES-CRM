@@ -1,10 +1,10 @@
 from django.core.mail import send_mail
 from django.shortcuts import reverse
 from django.contrib import messages
+from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from agents.mixins import OrganiserAndLoginRequiredMixin
-from django.views import generic
-from .models import Lead, Category
+from .models import Lead
 from .forms import (
     LeadModelForm,
     CustomUserCreationForm,
@@ -17,6 +17,9 @@ from .forms import (
 
 
 class SignupView(generic.CreateView):
+    """
+    creates an account and redirects to logi npage if succesfull
+    """
     template_name = 'registration/signup.html'
     form_class = CustomUserCreationForm
 
@@ -32,6 +35,9 @@ class LandingPageView(generic.TemplateView):
 
 
 class LeadListView(LoginRequiredMixin, generic.ListView):
+    """
+    lead list view, filter based on organiser or agent
+    """
     template_name = 'leads/lead_list.html'
     context_object_name = 'leads'
 
@@ -62,6 +68,9 @@ class LeadListView(LoginRequiredMixin, generic.ListView):
 
 
 class LeadDetailView(LoginRequiredMixin, generic.DetailView):
+    """
+    lead detail view, checks if use is an organiser or agent and filter accordingly
+    """
     template_name = 'leads/lead_detail.html'
     queryset = Lead.objects.all()
     context_object_name = 'lead'
@@ -81,6 +90,9 @@ class LeadDetailView(LoginRequiredMixin, generic.DetailView):
 
 
 class LeadCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
+    """
+    cerates a lead, if succesfull, redirects to the lead list
+    """
     template_name = 'leads/lead_create.html'
     form_class = LeadModelForm
 
@@ -102,6 +114,9 @@ class LeadCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
 
 
 class LeadUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
+    """
+    updates a lead, if successfull redirects to a lead list
+    """
     template_name = 'leads/lead_update.html'
     form_class = LeadModelForm
 
@@ -114,11 +129,14 @@ class LeadUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
 
     def form_valid(self, form):
         form.save()
-        messages.info(self.request, "You have successfully updated a lead")
+        messages.success(self.request, "You have successfully updated a lead")
         return super(LeadUpdateView, self).form_valid(form)
 
 
 class LeadDeleteView(OrganiserAndLoginRequiredMixin, generic.DeleteView):
+    """
+    deletes a lead, if succesfull redirects to a lead list
+    """
     template_name = 'leads/lead_delete.html'
     form_class = LeadModelForm
 
@@ -131,6 +149,9 @@ class LeadDeleteView(OrganiserAndLoginRequiredMixin, generic.DeleteView):
 
 
 class AssignAgentView(OrganiserAndLoginRequiredMixin, generic.FormView):
+    """
+    assigns an agent to a lead
+    """
     template_name = 'leads/assign_agent.html'
     form_class = AssignAgentForm
 
@@ -153,6 +174,9 @@ class AssignAgentView(OrganiserAndLoginRequiredMixin, generic.FormView):
 
 
 class LeadCategoryUpdateView(LoginRequiredMixin, generic.UpdateView):
+    """
+    updates a category on a lead
+    """
     template_name = "leads/lead_category_update.html"
     form_class = LeadCategoryUpdateForm
 
@@ -174,6 +198,9 @@ class LeadCategoryUpdateView(LoginRequiredMixin, generic.UpdateView):
 
 
 class CategoryCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
+    """
+    creates a new categoryand adds it to the category list
+    """
     template_name = "leads/category_create.html"
     form_class = CategoryModelForm
 
