@@ -190,7 +190,6 @@ Messages are displayed for continual feedback to the user on their interactions 
 
 
 ## Authentication
-
 The authentication process for the application has three parts.
 
 * Sign Up
@@ -269,19 +268,23 @@ I used four types buttons to navigate the site
 | Tools | Description | Link |
 |--|--|--|
 | Google Fonts| Fonts |[Google Fonts](https://fonts.google.com/ "Fonts")|
-| ColorMind|Colour pallet| [coolors](http://colormind.io/ "colormind")|
+| ColorMind|Colour palet| [coolors](http://colormind.io/ "colormind")|
 | GitPod | Development environment |[Gitpod](https://www.gitpod.io/ "Gitpod")|
 | Balsamic | Wireframes |[Balsamic](https://balsamiq.com/wireframes/ "Balsamic")|
 | Font Awesome | Icons |[Font Awesome library](https://fontawesome.com/ "Font Awesome")|
 | W3C | Markup Validation | [W3C Markup Validation Service](https://validator.w3.org/ "W3C")|
 | W3C | CSS Validation | [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C")|
 | PEP8 | Python Validation | [PEP8](http://pep8online.com/ "PEP8")|
-| JSHint | JavaScript and JQuery Validation | [JSHint](https://jshint.com/ "JSHint")|
 
 
 
 ## Bugs
-
+bugs I encountered during development:
+* Agents link didnt properly show to organiser - fixed
+* Lead list didnt show unassigned agents - fixed
+* Agents didnt see assigned leads to them - fixed
+* Couldnt assign an agent to a lead - fixed
+ 
 
 
 # Deployment
@@ -378,6 +381,10 @@ The HTML code within the application has been validated by [W3C Markup Validatio
 * Lead List
 ![validator html lead list](https://res.cloudinary.com/dontkrfjd/image/upload/v1654867236/w3c-validator-lead-list_rmj2yw.png)
 
+* Agent list
+![validator html agent list](https://res.cloudinary.com/dontkrfjd/image/upload/v1654868273/w3s_agent_list_gcrkng.png)
+
+
 
 ### CSS
 The CSS code within the application has been validated by [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C"), and the results can be seen below.
@@ -386,7 +393,6 @@ The CSS code within the application has been validated by [W3C CSS Validation Se
 
 ### Python
 The Python code within the application has been validated by [PEP* Validation Service](http://pep8online.com/ "PEP*"). Files were put through the validator separately and the results can be seen below.
-![Sign Up Form](https://res.cloudinary.com/dontkrfjd/image/upload/v1654709117/SignUp_bytmsk.png)
 
 #### lead application
 
