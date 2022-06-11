@@ -10,6 +10,9 @@ from .mixins import OrganiserAndLoginRequiredMixin
 # Create your views here.
 
 class AgentListView(OrganiserAndLoginRequiredMixin, generic.ListView):
+    """
+    agent list, filters based on organisation (oraganisation = organiser)
+    """
     template_name = 'agents/agent_list.html'
 
     def get_queryset(self):
@@ -18,6 +21,9 @@ class AgentListView(OrganiserAndLoginRequiredMixin, generic.ListView):
 
 
 class AgentCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
+    """
+    creates a new agent, sets a new password
+    """
     template_name = 'agents/agent_create.html'
     form_class = AgentModelForm
 
@@ -47,6 +53,9 @@ class AgentCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
 
 
 class AgentDetailView(OrganiserAndLoginRequiredMixin, generic.DetailView):
+    """
+    agent detail, filters based on organisation
+    """    
     template_name = 'agents/agent_detail.html'
     context_object_name = 'agent'
 
@@ -56,6 +65,9 @@ class AgentDetailView(OrganiserAndLoginRequiredMixin, generic.DetailView):
 
 
 class AgentUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
+    """
+    agent update, if succesfull redirects back to an agent list
+    """
     template_name = 'agents/agent_update.html'
     form_class = AgentModelForm
 
@@ -68,6 +80,9 @@ class AgentUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
 
 
 class AgentDeleteView(OrganiserAndLoginRequiredMixin, generic.DeleteView):
+    """
+    deletes an agent, redirects back to an agent list if succesfull
+    """
     template_name = 'agents/agent_delete.html'
     context_object_name = 'agent'
 
