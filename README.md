@@ -1,9 +1,6 @@
 # Bohemian Estates International Client repoting system
 ![BES](https://res.cloudinary.com/dontkrfjd/image/upload/v1654698504/responsive_akitqp.png)
 
-# Table of content
-
-
 
 # Background
 Given the area of business the company, Bohemian Estates International s.r.o. is in. There is a strong demand for renting, opose to owning. Because of rising prices and rates on mortgages, there is a strong expectations that business growth will continue and may even speed up. Therefore there is a demand for CRM for the company to keep track of new incoming clients and for growing team and its' staff members.
