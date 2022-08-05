@@ -80,8 +80,8 @@ class AgentUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
 
     def form_valid(self, form):
         form.save()
-        messages.success(self.request, "You have successfully updated an agent.")
-        return super(LeadUpdateView, self).form_valid(form)
+        messages.success(self.request, "Agent updated")
+        return super(AgentUpdateView, self).form_valid(form)
 
 
 class AgentDeleteView(OrganiserAndLoginRequiredMixin, generic.DeleteView):
