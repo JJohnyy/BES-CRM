@@ -18,7 +18,7 @@ from .forms import (
 
 class SignupView(generic.CreateView):
     """
-    creates an account and redirects to logi npage if succesfull
+    creates an account and redirects to login page if succesfull
     """
     template_name = 'registration/signup.html'
     form_class = CustomUserCreationForm
@@ -69,7 +69,7 @@ class LeadListView(LoginRequiredMixin, generic.ListView):
 
 class LeadDetailView(LoginRequiredMixin, generic.DetailView):
     """
-    lead detail view, checks if use is an organiser or agent and filter accordingly
+    lead detail view, checks if use is an organiser or agent and filter properly
     """
     template_name = 'leads/lead_detail.html'
     queryset = Lead.objects.all()
