@@ -78,11 +78,6 @@ class AgentUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
         organisation = self.request.user.userprofile
         return Agent.objects.filter(organisation=organisation)
 
-    def form_valid(self, form):
-        form.save()
-        messages.success(self.request, "Agent updated")
-        return super(AgentUpdateView, self).form_valid(form)
-
 
 class AgentDeleteView(OrganiserAndLoginRequiredMixin, generic.DeleteView):
     """
