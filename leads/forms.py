@@ -20,6 +20,10 @@ class LeadModelForm(forms.ModelForm):
             'description',
             'agent',
         )
+    def clean_phone(self, *args, **kwargs):
+        phone = self.cleaned_data('phone')
+        if 
+
 
 
 class LeadForm(forms.Form):
