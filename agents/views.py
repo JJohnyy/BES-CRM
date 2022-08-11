@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.shortcuts import reverse
 from .forms import AgentModelForm
 from .mixins import OrganiserAndLoginRequiredMixin
+from agents.models import Agent
 
 
 # Create your views here.

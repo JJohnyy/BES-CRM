@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
+from agents.models import Agent
+from leads.models import Lead
 
 
 User = get_user_model()
