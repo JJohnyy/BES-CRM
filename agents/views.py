@@ -2,7 +2,6 @@ from django.core.mail import send_mail
 from django.views import generic
 from django.contrib import messages
 from django.shortcuts import reverse
-from leads.models import Agent
 from .forms import AgentModelForm
 from .mixins import OrganiserAndLoginRequiredMixin
 

@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models.signals import post_save
 from django.contrib.auth.models import AbstractUser
-from agents.models import Agent, User, UserProfile
+from agents.models import User, UserProfile
 # Create your models here.
 
 
@@ -13,7 +13,7 @@ class Lead(models.Model):
     phone = models.CharField(max_length=20)
     organisation = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     agent = models.ForeignKey(
-        'Agent', null=True, blank=True,
+        'agents.Agent', null=True, blank=True,
         on_delete=models.SET_NULL
     )
     category = models.ForeignKey(
