@@ -7,7 +7,9 @@ from .views import (
     LeadDeleteView,
     AssignAgentView,
     LeadCategoryUpdateView,
-    CategoryCreateView
+    CategoryCreateView,
+    LandingPageView, 
+    SignupView,
 )
 
 
