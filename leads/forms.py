@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model
-from .models import Lead, Agent, Category
+from .models import Agent, Lead, Category
 from django.contrib.auth.forms import UserCreationForm, UsernameField
 
 
