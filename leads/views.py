@@ -5,7 +5,7 @@ from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from agents.mixins import OrganiserAndLoginRequiredMixin
 from .models import Lead
-from .forms import (
+from leads.forms import (
     LeadModelForm,
     CustomUserCreationForm,
     LeadCategoryUpdateForm,
