@@ -6,7 +6,7 @@ from django.conf import settings
 
 class User(AbstractUser):
     is_organiser = models.BooleanField(default=True)
-    is_agent = models.BooleanField(default=False)
+    is_agent = models.BooleanField(default=True)
 
 
 class UserProfile(models.Model):

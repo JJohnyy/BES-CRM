@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.shortcuts import reverse
 from .forms import AgentModelForm
 from .mixins import OrganiserAndLoginRequiredMixin
-from agents.models import Agent
+from agents.models import Agent, User
 
 
 # Create your views here.
@@ -70,13 +70,19 @@ class AgentUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
     """
     template_name = 'agents/agent_update.html'
     form_class = AgentModelForm
+    model = Agent
 
     def get_success_url(self):
         return reverse('agents:agent-list')
 
-    def get_queryset(self):
-        organisation = self.request.user.userprofile
-        return Agent.objects.filter(organisation=organisation)
+    #def get_queryset(self):
+    #    organisation = self.request.user.userprofile
+    #    return Agent.objects.filter(organisation=organisation)
+    
+    def form_valid(self, form):
+        form.save()
+        messages.success(self.request, "You have successfully updated an agent")
+        return super(AgentUpdateView, self).form_valid(form)
 
 
 class AgentDeleteView(OrganiserAndLoginRequiredMixin, generic.DeleteView):
