@@ -40,6 +40,7 @@ class AgentCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
             user=user,
             organisation=self.request.user.userprofile
         )
+
         send_mail(
             subject='Agent created',
             message="You were added as an agent on BES CRM",
@@ -61,23 +62,19 @@ class AgentDetailView(OrganiserAndLoginRequiredMixin, generic.DetailView):
 
     def get_queryset(self):
         organisation = self.request.user.userprofile
-        return Agent.objects.filter(organisation=organisation)
+        return User.objects.filter(organisation=organisation)
 
 
 class AgentUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
-    """
-    agent update, if succesfull redirects back to an agent list
-    """
-    template_name = 'agents/agent_update.html'
+    template_name = "agents/agent_update.html"
     form_class = AgentModelForm
-    model = Agent
 
     def get_success_url(self):
-        return reverse('agents:agent-list')
+        return reverse("agents:agent-list")
 
-    #def get_queryset(self):
-    #    organisation = self.request.user.userprofile
-    #    return Agent.objects.filter(organisation=organisation)
+    def get_queryset(self):
+        organisation = self.request.user.userprofile
+        return Agent.objects.filter(organisation=organisation)
     
     def form_valid(self, form):
         form.save()
