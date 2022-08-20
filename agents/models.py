@@ -1,12 +1,22 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 
 # Create your models here.
 
+<<<<<<< HEAD
 class User(models.Model):
     is_organiser = models.BooleanField(default=True)
     is_agent = models.BooleanField(default=False)
+=======
+class User(AbstractUser):
+    is_organiser = models.BooleanField(default=True)
+    is_agent = models.BooleanField(default=True)
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+>>>>>>> parent of 4cd8c1d (deleted abstractuser)
 
     def __str__(self):
         return self.user.username
