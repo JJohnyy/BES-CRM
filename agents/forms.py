@@ -40,5 +40,6 @@ class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = User
         fields = (
-            '__all__'
+            'first_name',
+            'last_name',
         )

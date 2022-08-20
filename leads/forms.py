@@ -1,5 +1,9 @@
 from django import forms
+from django.contrib.auth import get_user_model
 from .models import Lead, Category
+
+
+User = get_user_model()
 
 
 class LeadModelForm(forms.ModelForm):
