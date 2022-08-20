@@ -20,14 +20,7 @@ class LeadModelForm(forms.ModelForm):
             'description',
             'agent',
         )
-    def phone_validation(self):
-        phone = 'phone'
-        try self.cleaned_data.get.int((userInput)):
-            pass
-        else ValueError:
-            raise forms.ValidationError('Phone must be a valid phone number')
-
-
+        
 
 class LeadForm(forms.Form):
     first_name = forms.CharField(max_length=20)

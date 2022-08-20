@@ -16,7 +16,7 @@ class AgentListView(OrganiserAndLoginRequiredMixin, generic.ListView):
     template_name = 'agents/agent_list.html'
 
     def get_queryset(self):
-        organisation = self.request.user.userprofile
+        organisation = self.request.user
         return Agent.objects.filter(organisation=organisation)
 
 
@@ -38,7 +38,7 @@ class AgentCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
         user.save()
         Agent.objects.create(
             user=user,
-            organisation=self.request.user.userprofile
+            organisation=self.request.user
         )
 
         send_mail(
@@ -61,7 +61,7 @@ class AgentDetailView(OrganiserAndLoginRequiredMixin, generic.DetailView):
     context_object_name = 'agent'
 
     def get_queryset(self):
-        organisation = self.request.user.userprofile
+        organisation = self.request.user
         return User.objects.filter(organisation=organisation)
 
 
@@ -73,7 +73,7 @@ class AgentUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
         return reverse("agents:agent-list")
 
     def get_queryset(self):
-        organisation = self.request.user.userprofile
+        organisation = self.request.user
         return Agent.objects.filter(organisation=organisation)
     
     def form_valid(self, form):
