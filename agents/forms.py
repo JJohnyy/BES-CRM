@@ -1,13 +1,9 @@
 from django import forms
-<<<<<<< HEAD
 from agents.models import Agent, User
 from leads.models import Lead
-=======
+
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
->>>>>>> parent of 2fa6725 (mademigration)
-
-
 
 
 class AgentModelForm(forms.ModelForm):

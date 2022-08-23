@@ -4,10 +4,7 @@ from django.contrib import messages
 from django.shortcuts import reverse
 from .forms import AgentModelForm
 from .mixins import OrganiserAndLoginRequiredMixin
-<<<<<<< HEAD
 from agents.models import Agent, User
-=======
->>>>>>> parent of 2fa6725 (mademigration)
 
 
 # Create your views here.

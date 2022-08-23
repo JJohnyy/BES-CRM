@@ -8,7 +8,6 @@ from .models import Lead
 from agents.forms import AssignAgentForm
 from leads.forms import (
     LeadModelForm,
-    CustomUserCreationForm,
     LeadCategoryUpdateForm,
     CategoryModelForm
 )
@@ -16,18 +15,6 @@ from leads.forms import (
 # Create your views here.
 
 
-class SignupView(generic.CreateView):
-    """
-    creates an account and redirects to login page if succesfull
-    """
-    template_name = 'registration/signup.html'
-    form_class = CustomUserCreationForm
-
-    def get_success_url(self):
-        messages.success(
-            self.request, "You have successfully created an account"
-            )
-        return reverse('login')
 
 
 class LandingPageView(generic.TemplateView):
