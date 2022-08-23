@@ -9,13 +9,13 @@ from django.contrib.auth.forms import UserCreationForm
 class AgentModelForm(forms.ModelForm):
     class Meta:
         model = User
-        #fields = (
-         #    'email',
-         #    'username',
-         #    'first_name',
-         #    'last_name',
-         #)
-        fields = '__all__'
+        fields = (
+             'email',
+             'username',
+             'first_name',
+             'last_name',
+         )
+        
 
 
 class AssignAgentForm(forms.Form):

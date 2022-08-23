@@ -1,25 +1,35 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
 from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your models here.
 
 
-class User(models.Model):
-    is_organiser = models.BooleanField(default=True)
-    is_agent = models.BooleanField(default=False)
-
-
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    is_organiser = models.BooleanField(default=True)
+    is_agent = models.BooleanField(default=False)
 
     def __str__(self):
         return self.user.username
 
 
 class Agent(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    #organisation = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    organisation = models.ForeignKey(User, on_delete=models.CASCADE)
    
     def __str__(self):
         return self.user.last_name
+
+
+@receiver(post_save, sender=User)
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+    """
+    Create or update the user profile
+    """
+    if created:
+        UserProfile.objects.create(user=instance)
+    # Existing users: just save the profile
+    instance.userprofile.save()
