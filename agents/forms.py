@@ -2,20 +2,13 @@ from django import forms
 from agents.models import Agent
 from leads.models import Lead
 
-from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm
-
 
 class AgentModelForm(forms.ModelForm):
     class Meta:
         model = Agent
         fields = (
-             'user.email',
-             'username',
-             'first_name',
-             'last_name',
+             '__all__'
          )
-        
 
 
 class AssignAgentForm(forms.Form):
@@ -27,10 +20,10 @@ class AssignAgentForm(forms.Form):
         super(AssignAgentForm, self).__init__(*args, **kwargs)
         self.fields["agent"].queryset = agents
 
-
 class LeadCategoryUpdateForm(forms.ModelForm):
     class Meta:
         model = Lead
         fields = (
             'category',
         )
+
