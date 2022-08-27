@@ -20,7 +20,6 @@ from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from django.urls import path, include
 from leads.views import LandingPageView
-#from leads.views import LandingPageView, SignupView
 
 
 urlpatterns = [

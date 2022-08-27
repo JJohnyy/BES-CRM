@@ -6,7 +6,6 @@ from .forms import AgentModelForm
 from .mixins import OrganiserAndLoginRequiredMixin
 from agents.models import Agent, User
 
-
 # Create your views here.
 
 class AgentListView(OrganiserAndLoginRequiredMixin, generic.ListView):
@@ -18,7 +17,6 @@ class AgentListView(OrganiserAndLoginRequiredMixin, generic.ListView):
     def get_queryset(self):
         organisation = self.request.user
         return Agent.objects.filter(organisation=organisation)
-
 
 class AgentCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
     """
@@ -52,7 +50,6 @@ class AgentCreateView(OrganiserAndLoginRequiredMixin, generic.CreateView):
             )
         return super(AgentCreateView, self).form_valid(form)
 
-
 class AgentDetailView(OrganiserAndLoginRequiredMixin, generic.DetailView):
     """
     agent detail, filters based on organisation
@@ -63,7 +60,6 @@ class AgentDetailView(OrganiserAndLoginRequiredMixin, generic.DetailView):
     def get_queryset(self):
         organisation = self.request.user
         return User.objects.filter(organisation=organisation)
-
 
 class AgentUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
     template_name = "agents/agent_update.html"
@@ -81,7 +77,6 @@ class AgentUpdateView(OrganiserAndLoginRequiredMixin, generic.UpdateView):
         messages.success(self.request, "You have successfully updated an agent")
         return super(AgentUpdateView, self).form_valid(form)
 
-
 class AgentDeleteView(OrganiserAndLoginRequiredMixin, generic.DeleteView):
     """
     deletes an agent, redirects back to an agent list if succesfull
@@ -95,3 +90,4 @@ class AgentDeleteView(OrganiserAndLoginRequiredMixin, generic.DeleteView):
 
     def get_success_url(self):
         return reverse('agents:agent-list')
+

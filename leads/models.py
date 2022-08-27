@@ -9,7 +9,7 @@ class Lead(models.Model):
     age = models.IntegerField(default=0)
     address = models.CharField(max_length=100)
     phone = models.CharField(max_length=20)
-    organisation = models.ForeignKey(Agent, on_delete=models.CASCADE)
+    #organisation = models.ForeignKey(Agent, on_delete=models.CASCADE)
     agent = models.ForeignKey(
         'agents.Agent', null=True, blank=True,
         on_delete=models.SET_NULL
