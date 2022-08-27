@@ -11,7 +11,7 @@
             <ul class="nav-link-wrapper">
                 {% if not request.user.is_authenticated %}
                 <li class="nav-link-item">
-                    <a class="sign-button" href="{% url 'signup' %}">Signup</a>
+                    <!--<a class="sign-button" href="{% url 'signup' %}">Signup</a>-->
                 </li>
                 {% else %}
                 {% if request.user.is_organiser %}
