@@ -19,10 +19,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from django.urls import path, include
+from leads.views import LandingPageView
 #from leads.views import LandingPageView, SignupView
 
 
 urlpatterns = [
+    path('', LandingPageView.as_view(), name='landing_page'),
     path('agents/', include('agents.urls', namespace='agents')),
     path('admin/', admin.site.urls),
     path('leads/', include('leads.urls', namespace='leads')),

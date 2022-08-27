@@ -11,6 +11,7 @@ from leads.forms import (
     LeadCategoryUpdateForm,
     CategoryModelForm
 )
+from django.shortcuts import render
 
 # Create your views here.
 
